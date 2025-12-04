@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Gallery - Yonkett App</title>
+    <link rel="stylesheet" href="styles/project.css">
+    <!-- Link to cars specific CSS -->
+    <link rel="stylesheet" href="styles/cars.css">
+</head>
+
+<body>
+    <!-- Header with hamburger menu -->
+    <header class="header">
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="cars.html" class="nav-link active">Cars Gallery</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="privacy.html" class="nav-link">Privacy Policy</a>
+            <a href="terms.html" class="nav-link">Terms & Conditions</a>
+            <a href="delete-account.html" class="nav-link">Delete Account</a>
+        </nav>
+    </header>
+
+    <!-- Logo container -->
+    <div class="logo-container">
+        <img src="images/logo-yonkett.png" alt="Yonkett Logo" class="header-logo">
+    </div>
+
+    <!-- Main content -->
+    <main class="cars-main">
+        <div class="cars-header">
+            <h1>Car Models Gallery</h1>
+            <p class="cars-subtitle">Browse through our community's most popular car models</p>
+            
+            <!-- Filter controls -->
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="year-filter">Filter by Year:</label>
+                    <select id="year-filter" class="filter-select">
+                        <option value="all">All Years</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="fuel-filter">Filter by Fuel Type:</label>
+                    <select id="fuel-filter" class="filter-select">
+                        <option value="all">All Fuel Types</option>
+                        <option value="gasoline">Gasoline</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by" class="filter-select">
+                        <option value="popularity">Most Popular</option>
+                        <option value="year-new">Year (Newest)</option>
+                        <option value="year-old">Year (Oldest)</option>
+                        <option value="name">Name (A-Z)</option>
+                    </select>
+                </div>
+                
+                <button id="reset-filters" class="reset-btn">Reset Filters</button>
+            </div>
+            
+            <!-- Car count and stats -->
+            <div class="cars-stats">
+                <p>Showing <span id="car-count">0</span> car models</p>
+                <div class="local-storage-info">
+                    <small>Last viewed: <span id="last-viewed"></span></small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cars grid container -->
+        <section class="cars-gallery">
+            <div class="cars-container" id="cars-container">
+                <!-- Dynamic car cards will be inserted here -->
+                <div class="loading-cars">
+                    <div class="loading-spinner"></div>
+                    <p>Loading car data...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- View toggle buttons -->
+        <div class="view-toggle">
+            <button id="grid-view-btn" class="view-btn active" aria-label="Grid view">
+                <span class="view-icon">⬜⬜</span> Grid
+            </button>
+            <button id="list-view-btn" class="view-btn" aria-label="List view">
+                <span class="view-icon">☰</span> List
+            </button>
+        </div>
+
+        <!-- Car Details Modal -->
+        <dialog class="car-modal" id="car-modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">×</button>
+                <div class="modal-body">
+                    <div class="modal-car-image">
+                        <img id="modal-car-img" src="" alt="Car image">
+                    </div>
+                    <div class="modal-car-details">
+                        <h2 id="modal-car-title"></h2>
+                        <div class="modal-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Year:</span>
+                                <span id="modal-car-year" class="stat-value"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Fuel Type:</span>
+                                <span id="modal-car-fuel" class="stat-value"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Owners in Community:</span>
+                                <span id="modal-car-owners" class="stat-value"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Average Rating:</span>
+                                <span id="modal-car-rating" class="stat-value"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Common Issues:</span>
+                                <span id="modal-car-issues" class="stat-value"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Maintenance Cost/Yr:</span>
+                                <span id="modal-car-cost" class="stat-value"></span>
+                            </div>
+                        </div>
+                        <p class="modal-description" id="modal-car-description"></p>
+                        <div class="modal-actions">
+                            <button class="favorite-btn" id="favorite-btn">
+                                <span class="heart-icon">♡</span> Add to Favorites
+                            </button>
+                            <button class="compare-btn" id="compare-btn">
+                                <span class="compare-icon">⚖</span> Compare
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Comparison Modal -->
+        <dialog class="compare-modal" id="compare-modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close comparison">×</button>
+                <h2>Compare Cars</h2>
+                <div class="compare-container" id="compare-container">
+                    <!-- Comparison table will be inserted here -->
+                </div>
+                <div class="compare-actions">
+                    <button id="clear-comparison" class="action-btn">Clear Comparison</button>
+                    <button id="close-comparison" class="action-btn primary">Close</button>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="images/logo-yonkett.png" alt="Yonkett Logo" class="footer-logo">
+                <button class="preferences-btn" onclick="openPreferencesModal()">
+                    <span class="btn-icon">⚙️</span> Preferences
+                </button>
+            </div>
+            <div class="footer-center">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="cars.html" class="footer-link active">Cars Gallery</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                <a href="delete-account.html" class="footer-link">Delete Account</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://github.com/MizaelMuro01" class="social-link" target="_blank" aria-label="GitHub">
+                        <img src="images/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mizael-muro-509421250" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="images/insta-yonkett.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="images/facebook-yonkett.png" alt="Facebook" class="social-icon">
+                    </a>
+                </div>
+                <div class="local-storage-info">
+                    <small>Favorites saved in browser</small>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Yonkett App. All rights reserved.</p>
+            <p>Cars data loaded: <span id="data-load-time"></span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/cars.js" type="module"></script>
+    <script src="scripts/project.js" type="module"></script>
+</body>
+
+</html>

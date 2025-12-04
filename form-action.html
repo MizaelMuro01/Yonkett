@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Received - Yonkett App</title>
+    <link rel="stylesheet" href="styles/project.css">
+    <!-- Form action specific CSS -->
+    <link rel="stylesheet" href="styles/form-action.css">
+</head>
+
+<body>
+    <!-- Header with hamburger menu -->
+    <header class="header">
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="cars.html" class="nav-link">Cars Gallery</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="privacy.html" class="nav-link">Privacy Policy</a>
+            <a href="terms.html" class="nav-link">Terms & Conditions</a>
+            <a href="delete-account.html" class="nav-link">Delete Account</a>
+        </nav>
+    </header>
+
+    <!-- Logo container -->
+    <div class="logo-container">
+        <img src="images/logo-yonkett.png" alt="Yonkett Logo" class="header-logo">
+    </div>
+
+    <!-- Main content -->
+    <main class="form-action-main">
+        <!-- Success Message -->
+        <section class="success-section">
+            <div class="success-icon">✓</div>
+            <h1>Message Successfully Sent!</h1>
+            <p class="success-message">Thank you for contacting Yonkett. We've received your message and will get back to you within 24-48 hours.</p>
+            
+            <div class="confirmation-id">
+                <span class="id-label">Confirmation ID:</span>
+                <span class="id-value" id="confirmation-id">Loading...</span>
+            </div>
+        </section>
+
+        <!-- Form Data Display Section -->
+        <section class="data-display-section">
+            <h2>Your Submitted Information</h2>
+            <p class="section-description">Here's what you sent us:</p>
+            
+            <div class="data-card">
+                <h3>Contact Details</h3>
+                <div class="data-grid" id="form-data-display">
+                    <!-- Data will be dynamically inserted here -->
+                    <div class="loading-data">
+                        <div class="loading-spinner"></div>
+                        <p>Loading your information...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="data-actions">
+                <button id="print-btn" class="action-btn">
+                    <span class="btn-icon">🖨️</span> Print This Page
+                </button>
+                <button id="new-message-btn" class="action-btn primary">
+                    <span class="btn-icon">✉️</span> Send Another Message
+                </button>
+                <button id="save-data-btn" class="action-btn">
+                    <span class="btn-icon">💾</span> Save to Browser
+                </button>
+            </div>
+        </section>
+
+        <!-- What Happens Next Section -->
+        <section class="next-steps-section">
+            <h2>What Happens Next?</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Confirmation Email</h3>
+                        <p>You'll receive an automated confirmation email within 5 minutes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Ticket Assignment</h3>
+                        <p>Your message is assigned to a support specialist based on your inquiry type.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Response</h3>
+                        <p>You'll receive a personalized response from our team within 24-48 hours.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Follow-up</h3>
+                        <p>We'll follow up to ensure your issue is resolved satisfactorily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions Section -->
+        <section class="quick-actions-section">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <a href="faq.html" class="action-card">
+                    <div class="action-icon">❓</div>
+                    <h3>Check FAQ</h3>
+                    <p>Find quick answers to common questions</p>
+                </a>
+                <a href="cars.html" class="action-card">
+                    <div class="action-icon">🚗</div>
+                    <h3>Browse Cars</h3>
+                    <p>Explore our car models gallery</p>
+                </a>
+                <a href="index.html" class="action-card">
+                    <div class="action-icon">🏠</div>
+                    <h3>Return Home</h3>
+                    <p>Go back to the main page</p>
+                </a>
+                <a href="privacy.html" class="action-card">
+                    <div class="action-icon">🔒</div>
+                    <h3>Privacy Policy</h3>
+                    <p>Review how we handle your data</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Session History Modal -->
+        <dialog class="history-modal" id="history-modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close history">×</button>
+                <h3>Your Contact History</h3>
+                <div class="history-content" id="history-content">
+                    <!-- History will be inserted here -->
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-btn" id="clear-history-btn">
+                        Clear History
+                    </button>
+                    <button type="button" class="primary-btn" id="close-history-btn">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Saved Data Modal -->
+        <dialog class="saved-data-modal" id="saved-data-modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close saved data">×</button>
+                <h3>Saved Form Submissions</h3>
+                <div class="saved-data-content" id="saved-data-content">
+                    <!-- Saved data will be inserted here -->
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-btn" id="clear-saved-data-btn">
+                        Clear All Saved
+                    </button>
+                    <button type="button" class="primary-btn" id="close-saved-data-btn">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="images/logo-yonkett.png" alt="Yonkett Logo" class="footer-logo">
+                <button class="preferences-btn" onclick="openPreferencesModal()">
+                    <span class="btn-icon">⚙️</span> Preferences
+                </button>
+                <button class="history-btn" id="view-history-btn">
+                    <span class="btn-icon">📜</span> View History
+                </button>
+            </div>
+            <div class="footer-center">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="cars.html" class="footer-link">Cars Gallery</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                <a href="delete-account.html" class="footer-link">Delete Account</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://github.com/MizaelMuro01" class="social-link" target="_blank" aria-label="GitHub">
+                        <img src="images/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mizael-muro-509421250" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="images/insta-yonkett.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="images/facebook-yonkett.png" alt="Facebook" class="social-icon">
+                    </a>
+                </div>
+                <div class="local-storage-info">
+                    <small>Submission saved to browser</small>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Yonkett App. All rights reserved.</p>
+            <p>Submission timestamp: <span id="submission-time"></span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/form-action.js" type="module"></script>
+    <script src="scripts/project.js" type="module"></script>
+</body>
+
+</html>

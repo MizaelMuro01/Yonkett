@@ -9,19 +9,34 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header con hamburger menu -->
     <header class="header">
+        <!-- Hamburger button for mobile -->
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Navigation menu -->
         <nav class="nav">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="cars.html" class="nav-link">Cars Gallery</a> <!-- NEW PAGE -->
+            <a href="contact.html" class="nav-link">Contact</a> <!-- NEW PAGE -->
             <a href="privacy.html" class="nav-link">Privacy Policy</a>
             <a href="terms.html" class="nav-link">Terms & Conditions</a>
             <a href="delete-account.html" class="nav-link">Delete Account</a>
         </nav>
     </header>
 
+    <!-- Logo después del header -->
+    <div class="logo-container">
+        <img src="images/logo-yonkett.png" alt="Yonkett Logo" class="header-logo">
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
-        <img src="images/header-yonkett.png" alt="Yonkett App" class="hero-image">
+        <img src="images/header-yonkett.png" alt="Yonkett App - Connect with Car Owners" class="hero-image">
     </section>
 
     <!-- Info Section -->
@@ -29,15 +44,31 @@
         <div class="info-grid">
             <div class="info-card">
                 <img src="images/info-yonkett.png" alt="How Yonkett Works" class="info-image">
+                <div class="info-text">
+                    <h3>How It Works</h3>
+                    <p>Create your car profile and connect with same model owners</p>
+                </div>
             </div>
             <div class="info-card">
                 <img src="images/fuel-yonkett.png" alt="Fuel Tracking" class="info-image">
+                <div class="info-text">
+                    <h3>Fuel Tracking</h3>
+                    <p>Monitor your fuel expenses and maintenance costs</p>
+                </div>
             </div>
             <div class="info-card">
                 <img src="images/community-yonkett.png" alt="Community" class="info-image">
+                <div class="info-text">
+                    <h3>Community</h3>
+                    <p>Join model-specific groups and share experiences</p>
+                </div>
             </div>
             <div class="info-card">
                 <img src="images/marketplace-yonkett.png" alt="Marketplace" class="info-image">
+                <div class="info-text">
+                    <h3>Marketplace</h3>
+                    <p>Buy and sell parts for your specific car model</p>
+                </div>
             </div>
         </div>
     </section>
@@ -50,49 +81,110 @@
         </div>
     </section>
 
+    <!-- Car Statistics Section (NEW - Dynamic Data) -->
+    <section class="stats-section">
+        <h2 class="stats-title">Popular Car Models in Our Community</h2>
+        <div class="stats-container" id="stats-container">
+            <!-- Dynamic car stats will be loaded here -->
+            <div class="loading">Loading car statistics...</div>
+        </div>
+        <div class="view-more">
+            <a href="cars.html" class="view-more-btn">View All Cars Gallery</a>
+        </div>
+    </section>
+
     <!-- App Stores Section -->
     <section class="stores-section">
         <h2 class="stores-title">Download Our App</h2>
         <div class="stores-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.yonkett.yonkett" class="store-link">
-                <img src="images/google-yonkett.png" alt="Google Play Store" class="store-image">
+            <a href="https://play.google.com/store/apps/details?id=com.yonkett.yonkett" class="store-link" target="_blank">
+                <img src="images/google-yonkett.png" alt="Download on Google Play Store" class="store-image">
             </a>
-            <a href="https://apps.apple.com/mx/app/yonkett/id6752039154" class="store-link">
-                <img src="images/appstore-yonkett.png" alt="Apple App Store" class="store-image">
+            <a href="https://apps.apple.com/mx/app/yonkett/id6752039154" class="store-link" target="_blank">
+                <img src="images/appstore-yonkett.png" alt="Download on Apple App Store" class="store-image">
             </a>
         </div>
     </section>
+
+    <!-- User Preferences Modal (NEW) -->
+    <dialog class="preferences-modal" id="preferences-modal">
+        <div class="modal-content">
+            <h3>User Preferences</h3>
+            <form id="preferences-form">
+                <div class="form-group">
+                    <label for="theme-select">Theme:</label>
+                    <select id="theme-select" name="theme">
+                        <option value="dark">Dark Mode</option>
+                        <option value="light">Light Mode</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="language-select">Language:</label>
+                    <select id="language-select" name="language">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="notifications" name="notifications">
+                        Enable notifications
+                    </label>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="modal-btn cancel-btn" onclick="closePreferencesModal()">Cancel</button>
+                    <button type="submit" class="modal-btn save-btn">Save Preferences</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
                 <img src="images/logo-yonkett.png" alt="Yonkett Logo" class="footer-logo">
+                <button class="preferences-btn" onclick="openPreferencesModal()">
+                    <span class="btn-icon">⚙️</span> Preferences
+                </button>
             </div>
             <div class="footer-center">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="cars.html" class="footer-link">Cars Gallery</a>
+                <a href="contact.html" class="footer-link">Contact</a>
                 <a href="privacy.html" class="footer-link">Privacy Policy</a>
                 <a href="terms.html" class="footer-link">Terms & Conditions</a>
                 <a href="delete-account.html" class="footer-link">Delete Account</a>
             </div>
             <div class="footer-right">
-                <a href="fallllllltaaaa el linkkkkkkk" class="social-link">
-                    <img src="images/linkedin-yonkett.png" alt="LinkedIn" class="social-icon">
-                </a>
-                <a href="fallllllltaaaa el linkkkkkkk" class="social-link">
-                    <img src="images/insta-yonkett.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="fallllllltaaaa el linkkkkkkk" class="social-link">
-                    <img src="images/kickstarter-yonkett.png" alt="Kickstarter" class="social-icon">
-                </a>
-                <a href="fallllllltaaaa el linkkkkkkk" class="social-link">
-                    <img src="images/facebook-yonkett.png" alt="Facebook" class="social-icon">
-                </a>
-
+                <div class="social-links">
+                    <a href="https://github.com/MizaelMuro01" class="social-link" target="_blank" aria-label="GitHub">
+                        <img src="images/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mizael-muro-509421250" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="images/insta-yonkett.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="images/facebook-yonkett.png" alt="Facebook" class="social-icon">
+                    </a>
+                </div>
+                <div class="local-storage-info">
+                    <small>Preferences saved in browser</small>
+                </div>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Yonkett App. All rights reserved.</p>
+            <p>Page loaded: <span id="page-load-time"></span></p>
         </div>
     </footer>
 
-    <script src="scripts/project.js"></script>
+    <!-- JavaScript files -->
+    <script src="scripts/project.js" type="module"></script>
+    <!-- type="module" for ES Modules requirement -->
 </body>
 
 </html>
