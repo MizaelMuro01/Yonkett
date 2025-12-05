@@ -1,12 +1,11 @@
-// cars.js - ES Module for cars gallery functionality with LOCAL images
-import { updateDates, setupFAQToggle, showNotification } from './project.js';
+// cars.js - ES Module for cars gallery
+import { updateDates, setupFAQToggle } from './project.js';
 
-// Car data - 18 cars with 6+ properties each using LOCAL images
+// Car data - 18 cars with local images
 const carsData = [
     {
         id: 1,
         model: "Audi A4",
-        brand: "Audi",
         year: 2023,
         fuel: "Gasoline",
         owners: 123,
@@ -19,7 +18,6 @@ const carsData = [
     {
         id: 2,
         model: "BMW 3 Series",
-        brand: "BMW",
         year: 2023,
         fuel: "Gasoline",
         owners: 156,
@@ -32,7 +30,6 @@ const carsData = [
     {
         id: 3,
         model: "Chevrolet Silverado",
-        brand: "Chevrolet",
         year: 2022,
         fuel: "Diesel",
         owners: 167,
@@ -45,7 +42,6 @@ const carsData = [
     {
         id: 4,
         model: "Ford F-150",
-        brand: "Ford",
         year: 2022,
         fuel: "Diesel",
         owners: 189,
@@ -58,7 +54,6 @@ const carsData = [
     {
         id: 5,
         model: "Ford Mustang",
-        brand: "Ford",
         year: 2023,
         fuel: "Gasoline",
         owners: 167,
@@ -71,7 +66,6 @@ const carsData = [
     {
         id: 6,
         model: "Honda Civic",
-        brand: "Honda",
         year: 2024,
         fuel: "Gasoline",
         owners: 312,
@@ -84,7 +78,6 @@ const carsData = [
     {
         id: 7,
         model: "Hyundai Tucson",
-        brand: "Hyundai",
         year: 2024,
         fuel: "Hybrid",
         owners: 201,
@@ -97,7 +90,6 @@ const carsData = [
     {
         id: 8,
         model: "Jeep Wrangler",
-        brand: "Jeep",
         year: 2023,
         fuel: "Diesel",
         owners: 178,
@@ -110,7 +102,6 @@ const carsData = [
     {
         id: 9,
         model: "Kia Sportage",
-        brand: "Kia",
         year: 2024,
         fuel: "Hybrid",
         owners: 195,
@@ -123,7 +114,6 @@ const carsData = [
     {
         id: 10,
         model: "Mazda CX-5",
-        brand: "Mazda",
         year: 2024,
         fuel: "Gasoline",
         owners: 234,
@@ -136,7 +126,6 @@ const carsData = [
     {
         id: 11,
         model: "Mercedes-Benz C-Class",
-        brand: "Mercedes-Benz",
         year: 2024,
         fuel: "Gasoline",
         owners: 134,
@@ -149,7 +138,6 @@ const carsData = [
     {
         id: 12,
         model: "Nissan Versa",
-        brand: "Nissan",
         year: 2023,
         fuel: "Gasoline",
         owners: 145,
@@ -162,7 +150,6 @@ const carsData = [
     {
         id: 13,
         model: "Tesla Model 3",
-        brand: "Tesla",
         year: 2024,
         fuel: "Electric",
         owners: 421,
@@ -175,7 +162,6 @@ const carsData = [
     {
         id: 14,
         model: "Toyota Camry",
-        brand: "Toyota",
         year: 2024,
         fuel: "Hybrid",
         owners: 289,
@@ -188,7 +174,6 @@ const carsData = [
     {
         id: 15,
         model: "Toyota Corolla",
-        brand: "Toyota",
         year: 2023,
         fuel: "Hybrid",
         owners: 245,
@@ -201,7 +186,6 @@ const carsData = [
     {
         id: 16,
         model: "Toyota RAV4",
-        brand: "Toyota",
         year: 2023,
         fuel: "Hybrid",
         owners: 278,
@@ -214,7 +198,6 @@ const carsData = [
     {
         id: 17,
         model: "Volkswagen Golf",
-        brand: "Volkswagen",
         year: 2023,
         fuel: "Gasoline",
         owners: 145,
@@ -227,7 +210,6 @@ const carsData = [
     {
         id: 18,
         model: "Volvo XC40",
-        brand: "Volvo",
         year: 2023,
         fuel: "Gasoline",
         owners: 156,
@@ -252,42 +234,36 @@ let filters = {};
 let carModal;
 let compareModal;
 
-// Initialize the page
+// Initialize page
 export function initCarsPage() {
-    console.log('Initializing cars page with local images...');
-    
     // Get DOM elements
     carsContainer = document.getElementById('cars-container');
     carCountElement = document.getElementById('car-count');
     carModal = document.getElementById('car-modal');
     compareModal = document.getElementById('compare-modal');
     
-    // Load saved preferences
+    // Load preferences
     loadPreferences();
     
-    // Setup event listeners
+    // Setup events
     setupEventListeners();
     
-    // Display initial cars
+    // Display cars
     displayCars();
     
-    // Update last viewed time
+    // Update times
     updateLastViewed();
-    
-    // Update data load time
     updateDataLoadTime();
 }
 
-// Load user preferences from localStorage
+// Load preferences
 function loadPreferences() {
-    // View preference
     const savedView = localStorage.getItem('carView');
     if (savedView) {
         currentView = savedView;
         setView(currentView);
     }
     
-    // Filter preferences
     const savedFilters = localStorage.getItem('carFilters');
     if (savedFilters) {
         filters = JSON.parse(savedFilters);
@@ -331,7 +307,7 @@ function setupEventListeners() {
         });
     });
     
-    // Close modals on backdrop click
+    // Close modals on backdrop
     carModal.addEventListener('click', (e) => {
         if (e.target === carModal) carModal.close();
     });
@@ -349,7 +325,7 @@ function setupEventListeners() {
     document.getElementById('clear-comparison').addEventListener('click', clearComparison);
 }
 
-// Apply saved filters to UI
+// Apply saved filters
 function applySavedFilters() {
     if (filters.year) {
         document.getElementById('year-filter').value = filters.year;
@@ -362,7 +338,7 @@ function applySavedFilters() {
     }
 }
 
-// Save filters to localStorage
+// Save filters
 function saveFilters() {
     localStorage.setItem('carFilters', JSON.stringify(filters));
 }
@@ -371,17 +347,14 @@ function saveFilters() {
 function applyFilters() {
     let filteredCars = [...carsData];
     
-    // Apply year filter
     if (filters.year) {
         filteredCars = filteredCars.filter(car => car.year.toString() === filters.year);
     }
     
-    // Apply fuel filter
     if (filters.fuel) {
         filteredCars = filteredCars.filter(car => car.fuel.toLowerCase() === filters.fuel.toLowerCase());
     }
     
-    // Apply sorting
     if (filters.sort) {
         switch (filters.sort) {
             case 'popularity':
@@ -409,7 +382,7 @@ function applyFilters() {
     displayCars();
 }
 
-// Reset all filters
+// Reset filters
 function resetFilters() {
     filters = {};
     document.getElementById('year-filter').value = 'all';
@@ -417,46 +390,36 @@ function resetFilters() {
     document.getElementById('sort-by').value = 'popularity';
     localStorage.removeItem('carFilters');
     applyFilters();
-    showNotification('Filters reset to default');
 }
 
-// Set view mode (grid/list)
+// Set view mode
 function setView(view) {
     currentView = view;
     localStorage.setItem('carView', view);
     
-    // Update button states
     document.getElementById('grid-view-btn').classList.toggle('active', view === 'grid');
     document.getElementById('list-view-btn').classList.toggle('active', view === 'list');
     
-    // Update container class
     carsContainer.classList.toggle('list-view', view === 'list');
     
-    // Re-render cars with new view
     displayCars();
-    
-    showNotification(`View changed to ${view} view`);
 }
 
-// Display cars in the container
+// Display cars
 function displayCars() {
     if (!carsContainer) return;
     
-    // Clear container
     carsContainer.innerHTML = '';
     
-    // Update car count
     if (carCountElement) {
         carCountElement.textContent = currentCars.length;
     }
     
-    // Create car cards
     currentCars.forEach(car => {
         const carCard = createCarCard(car);
         carsContainer.appendChild(carCard);
     });
     
-    // If no cars found
     if (currentCars.length === 0) {
         carsContainer.innerHTML = `
             <div class="no-cars" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
@@ -469,7 +432,7 @@ function displayCars() {
     }
 }
 
-// Create a car card element
+// Create car card
 function createCarCard(car) {
     const isFavorited = favorites.includes(car.id);
     const isCompared = comparedCars.includes(car.id);
@@ -486,7 +449,6 @@ function createCarCard(car) {
         <div class="car-content">
             <div class="car-header">
                 <h3 class="car-title">${car.model}</h3>
-                <span class="car-brand">${car.brand}</span>
             </div>
             <div class="car-stats">
                 <div class="stat">
@@ -527,20 +489,18 @@ function createCarCard(car) {
     return card;
 }
 
-// Show car details in modal - ASYNC FUNCTION WITH TRY/CATCH
+// Show car details
 export async function showCarDetails(carId) {
     try {
-        // Simulate async API call
         await new Promise(resolve => setTimeout(resolve, 100));
         
         const car = carsData.find(c => c.id === carId);
-        if (!car) throw new Error('Car not found');
+        if (!car) return;
         
         // Update modal content
         document.getElementById('modal-car-img').src = car.image;
         document.getElementById('modal-car-img').alt = car.model;
         document.getElementById('modal-car-title').textContent = car.model;
-        document.getElementById('modal-car-brand').textContent = car.brand;
         document.getElementById('modal-car-year').textContent = car.year;
         document.getElementById('modal-car-fuel').textContent = car.fuel;
         document.getElementById('modal-car-owners').textContent = car.owners;
@@ -571,20 +531,17 @@ export async function showCarDetails(carId) {
         
     } catch (error) {
         console.error('Error showing car details:', error);
-        showNotification('Could not load car details. Please try again.', 'error');
     }
 }
 
-// Toggle favorite status
+// Toggle favorite
 export function toggleFavorite(carId) {
     const index = favorites.indexOf(carId);
     
     if (index > -1) {
         favorites.splice(index, 1);
-        showNotification('Removed from favorites');
     } else {
         favorites.push(carId);
-        showNotification('Added to favorites');
     }
     
     localStorage.setItem('carFavorites', JSON.stringify(favorites));
@@ -601,20 +558,17 @@ export function toggleFavorite(carId) {
     }
 }
 
-// Toggle compare status
+// Toggle compare
 export function toggleCompare(carId) {
     const index = comparedCars.indexOf(carId);
     
     if (index > -1) {
         comparedCars.splice(index, 1);
-        showNotification('Removed from comparison');
     } else {
         if (comparedCars.length >= 3) {
-            showNotification('You can compare up to 3 cars at a time.', 'warning');
             return;
         }
         comparedCars.push(carId);
-        showNotification('Added to comparison');
     }
     
     localStorage.setItem('comparedCars', JSON.stringify(comparedCars));
@@ -630,7 +584,7 @@ export function toggleCompare(carId) {
         compareBtn.classList.toggle('compared', isCompared);
     }
     
-    // Update compare modal if open
+    // Update compare modal
     if (comparedCars.length > 0) {
         updateCompareModal();
     }
@@ -646,7 +600,6 @@ function updateCompareModal() {
         return;
     }
     
-    // Create comparison table
     let tableHTML = `
         <div class="compare-table-container">
             <table class="compare-table">
@@ -658,10 +611,6 @@ function updateCompareModal() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Brand</td>
-                        ${comparedCarsData.map(car => `<td>${car.brand}</td>`).join('')}
-                    </tr>
-                    <tr>
                         <td>Year</td>
                         ${comparedCarsData.map(car => `<td>${car.year}</td>`).join('')}
                     </tr>
@@ -670,7 +619,7 @@ function updateCompareModal() {
                         ${comparedCarsData.map(car => `<td>${car.fuel}</td>`).join('')}
                     </tr>
                     <tr>
-                        <td>Owners in Community</td>
+                        <td>Owners</td>
                         ${comparedCarsData.map(car => `<td>${car.owners}</td>`).join('')}
                     </tr>
                     <tr>
@@ -693,10 +642,9 @@ function updateCompareModal() {
     compareContainer.innerHTML = tableHTML;
 }
 
-// Show comparison modal
+// Show comparison
 export function showComparison() {
     if (comparedCars.length === 0) {
-        showNotification('Add cars to compare first', 'warning');
         return;
     }
     
@@ -711,10 +659,9 @@ function clearComparison() {
     displayCars();
     updateCompareModal();
     compareModal.close();
-    showNotification('Comparison cleared');
 }
 
-// Update last viewed time
+// Update last viewed
 function updateLastViewed() {
     const lastViewed = localStorage.getItem('lastCarViewed');
     if (lastViewed) {
@@ -722,7 +669,7 @@ function updateLastViewed() {
     }
 }
 
-// Save last viewed car
+// Save last viewed
 function saveLastViewed(carModel) {
     const now = new Date().toLocaleString();
     localStorage.setItem('lastCarViewed', `${carModel} - ${now}`);
@@ -735,14 +682,14 @@ function updateDataLoadTime() {
     document.getElementById('data-load-time').textContent = now;
 }
 
-// Make functions available globally for inline onclick handlers
+// Global functions
 window.showCarDetails = showCarDetails;
 window.toggleFavorite = toggleFavorite;
 window.toggleCompare = toggleCompare;
 window.resetFilters = resetFilters;
 window.showComparison = showComparison;
 
-// Initialize when DOM is loaded
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initCarsPage();
     updateDates();
