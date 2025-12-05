@@ -1,179 +1,12 @@
-// cars.js - ES Module for cars gallery functionality
-import { updateDates, setupFAQToggle } from './project.js';
+// cars.js - ES Module for cars gallery functionality with LOCAL images
+import { updateDates, setupFAQToggle, showNotification } from './project.js';
 
-// Car data - 18 cars with 6 properties each (more than required)
+// Car data - 18 cars with 6+ properties each using LOCAL images
 const carsData = [
     {
         id: 1,
-        model: "Toyota Corolla",
-        year: 2023,
-        fuel: "Hybrid",
-        owners: 245,
-        rating: 4.5,
-        commonIssues: "Brake wear, Battery life",
-        maintenanceCost: "$450/year",
-        description: "Reliable compact sedan with excellent fuel economy",
-        image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=250&fit=crop"
-    },
-    {
-        id: 2,
-        model: "Honda Civic",
-        year: 2024,
-        fuel: "Gasoline",
-        owners: 312,
-        rating: 4.7,
-        commonIssues: "CVT transmission, AC compressor",
-        maintenanceCost: "$500/year",
-        description: "Sporty compact with great handling and technology",
-        image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=250&fit=crop"
-    },
-    {
-        id: 3,
-        model: "Ford F-150",
-        year: 2022,
-        fuel: "Diesel",
-        owners: 189,
-        rating: 4.6,
-        commonIssues: "Transmission, Electrical systems",
-        maintenanceCost: "$750/year",
-        description: "Best-selling pickup truck in America",
-        image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=400&h=250&fit=crop"
-    },
-    {
-        id: 4,
-        model: "Tesla Model 3",
-        year: 2024,
-        fuel: "Electric",
-        owners: 421,
-        rating: 4.8,
-        commonIssues: "Touchscreen, Battery degradation",
-        maintenanceCost: "$300/year",
-        description: "Electric sedan with autopilot capabilities",
-        image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&h=250&fit=crop"
-    },
-    {
-        id: 5,
-        model: "BMW 3 Series",
-        year: 2023,
-        fuel: "Gasoline",
-        owners: 156,
-        rating: 4.4,
-        commonIssues: "Engine oil leaks, Electrical issues",
-        maintenanceCost: "$900/year",
-        description: "Luxury sports sedan with premium features",
-        image: "https://images.unsplash.com/photo-1555212697-194d092e3b8f?w=400&h=250&fit=crop"
-    },
-    {
-        id: 6,
-        model: "Toyota RAV4",
-        year: 2023,
-        fuel: "Hybrid",
-        owners: 278,
-        rating: 4.6,
-        commonIssues: "Infotainment system, Wind noise",
-        maintenanceCost: "$550/year",
-        description: "Popular compact SUV with hybrid option",
-        image: "https://images.unsplash.com/photo-1566473351650-b6e2e345b59f?w=400&h=250&fit=crop"
-    },
-    {
-        id: 7,
-        model: "Mercedes C-Class",
-        year: 2024,
-        fuel: "Gasoline",
-        owners: 134,
-        rating: 4.5,
-        commonIssues: "Suspension, Electronics",
-        maintenanceCost: "$950/year",
-        description: "Executive luxury sedan with cutting-edge tech",
-        image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=400&h=250&fit=crop"
-    },
-    {
-        id: 8,
-        model: "Chevrolet Silverado",
-        year: 2022,
-        fuel: "Diesel",
-        owners: 167,
-        rating: 4.3,
-        commonIssues: "Transmission, Fuel system",
-        maintenanceCost: "$700/year",
-        description: "Powerful work truck with towing capacity",
-        image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=250&fit=crop"
-    },
-    {
-        id: 9,
-        model: "Nissan Leaf",
-        year: 2023,
-        fuel: "Electric",
-        owners: 198,
-        rating: 4.2,
-        commonIssues: "Battery range, Charging port",
-        maintenanceCost: "$250/year",
-        description: "Affordable electric hatchback for city driving",
-        image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400&h=250&fit=crop"
-    },
-    {
-        id: 10,
-        model: "Subaru Outback",
-        year: 2024,
-        fuel: "Gasoline",
-        owners: 189,
-        rating: 4.6,
-        commonIssues: "CVT transmission, Oil consumption",
-        maintenanceCost: "$600/year",
-        description: "All-wheel drive wagon for adventure",
-        image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=400&h=250&fit=crop"
-    },
-    {
-        id: 11,
-        model: "Volkswagen Golf",
-        year: 2023,
-        fuel: "Gasoline",
-        owners: 145,
-        rating: 4.4,
-        commonIssues: "DSG transmission, Electrical",
-        maintenanceCost: "$550/year",
-        description: "German hot hatch with sporty performance",
-        image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400&h=250&fit=crop"
-    },
-    {
-        id: 12,
-        model: "Hyundai Tucson",
-        year: 2024,
-        fuel: "Hybrid",
-        owners: 201,
-        rating: 4.5,
-        commonIssues: "Infotainment, Paint quality",
-        maintenanceCost: "$480/year",
-        description: "Modern SUV with comprehensive warranty",
-        image: "https://images.unsplash.com/photo-1566473351650-b6e2e345b59f?w=400&h=250&fit=crop"
-    },
-    {
-        id: 13,
-        model: "Jeep Wrangler",
-        year: 2023,
-        fuel: "Diesel",
-        owners: 178,
-        rating: 4.3,
-        commonIssues: "Wind noise, Fuel economy",
-        maintenanceCost: "$650/year",
-        description: "Iconic off-road vehicle for adventure",
-        image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=400&h=250&fit=crop"
-    },
-    {
-        id: 14,
-        model: "Mazda CX-5",
-        year: 2024,
-        fuel: "Gasoline",
-        owners: 234,
-        rating: 4.7,
-        commonIssues: "Minor electrical issues",
-        maintenanceCost: "$520/year",
-        description: "Premium compact SUV with great handling",
-        image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&h=250&fit=crop"
-    },
-    {
-        id: 15,
         model: "Audi A4",
+        brand: "Audi",
         year: 2023,
         fuel: "Gasoline",
         owners: 123,
@@ -181,23 +14,51 @@ const carsData = [
         commonIssues: "Oil consumption, Electrical",
         maintenanceCost: "$850/year",
         description: "Premium German sedan with quattro AWD",
-        image: "https://images.unsplash.com/photo-1555212697-194d092e3b8f?w=400&h=250&fit=crop"
+        image: "images/AUDI-A4.png"
     },
     {
-        id: 16,
-        model: "Kia Sportage",
-        year: 2024,
-        fuel: "Hybrid",
-        owners: 195,
+        id: 2,
+        model: "BMW 3 Series",
+        brand: "BMW",
+        year: 2023,
+        fuel: "Gasoline",
+        owners: 156,
         rating: 4.4,
-        commonIssues: "Minor interior rattles",
-        maintenanceCost: "$470/year",
-        description: "Stylish SUV with advanced safety features",
-        image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=400&h=250&fit=crop"
+        commonIssues: "Engine oil leaks, Electrical issues",
+        maintenanceCost: "$900/year",
+        description: "Luxury sports sedan with premium features",
+        image: "images/BMW-SERIE3.png"
     },
     {
-        id: 17,
+        id: 3,
+        model: "Chevrolet Silverado",
+        brand: "Chevrolet",
+        year: 2022,
+        fuel: "Diesel",
+        owners: 167,
+        rating: 4.3,
+        commonIssues: "Transmission, Fuel system",
+        maintenanceCost: "$700/year",
+        description: "Powerful work truck with towing capacity",
+        image: "images/CHEVROLET-SILVERADO.png"
+    },
+    {
+        id: 4,
+        model: "Ford F-150",
+        brand: "Ford",
+        year: 2022,
+        fuel: "Diesel",
+        owners: 189,
+        rating: 4.6,
+        commonIssues: "Transmission, Electrical systems",
+        maintenanceCost: "$750/year",
+        description: "Best-selling pickup truck in America",
+        image: "images/FORD-F150.png"
+    },
+    {
+        id: 5,
         model: "Ford Mustang",
+        brand: "Ford",
         year: 2023,
         fuel: "Gasoline",
         owners: 167,
@@ -205,11 +66,116 @@ const carsData = [
         commonIssues: "Transmission, Suspension",
         maintenanceCost: "$700/year",
         description: "American muscle car icon",
-        image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=250&fit=crop"
+        image: "images/FORD-MUSTANG.png"
     },
     {
-        id: 18,
+        id: 6,
+        model: "Honda Civic",
+        brand: "Honda",
+        year: 2024,
+        fuel: "Gasoline",
+        owners: 312,
+        rating: 4.7,
+        commonIssues: "CVT transmission, AC compressor",
+        maintenanceCost: "$500/year",
+        description: "Sporty compact with great handling and technology",
+        image: "images/HONDA-CIVIC.png"
+    },
+    {
+        id: 7,
+        model: "Hyundai Tucson",
+        brand: "Hyundai",
+        year: 2024,
+        fuel: "Hybrid",
+        owners: 201,
+        rating: 4.5,
+        commonIssues: "Infotainment, Paint quality",
+        maintenanceCost: "$480/year",
+        description: "Modern SUV with comprehensive warranty",
+        image: "images/HYUNDAI-TUCSON.png"
+    },
+    {
+        id: 8,
+        model: "Jeep Wrangler",
+        brand: "Jeep",
+        year: 2023,
+        fuel: "Diesel",
+        owners: 178,
+        rating: 4.3,
+        commonIssues: "Wind noise, Fuel economy",
+        maintenanceCost: "$650/year",
+        description: "Iconic off-road vehicle for adventure",
+        image: "images/JEEP-WRANGLER.png"
+    },
+    {
+        id: 9,
+        model: "Kia Sportage",
+        brand: "Kia",
+        year: 2024,
+        fuel: "Hybrid",
+        owners: 195,
+        rating: 4.4,
+        commonIssues: "Minor interior rattles",
+        maintenanceCost: "$470/year",
+        description: "Stylish SUV with advanced safety features",
+        image: "images/KIA-SPORTAGE.png"
+    },
+    {
+        id: 10,
+        model: "Mazda CX-5",
+        brand: "Mazda",
+        year: 2024,
+        fuel: "Gasoline",
+        owners: 234,
+        rating: 4.7,
+        commonIssues: "Minor electrical issues",
+        maintenanceCost: "$520/year",
+        description: "Premium compact SUV with great handling",
+        image: "images/MAZDA-CX5.png"
+    },
+    {
+        id: 11,
+        model: "Mercedes-Benz C-Class",
+        brand: "Mercedes-Benz",
+        year: 2024,
+        fuel: "Gasoline",
+        owners: 134,
+        rating: 4.5,
+        commonIssues: "Suspension, Electronics",
+        maintenanceCost: "$950/year",
+        description: "Executive luxury sedan with cutting-edge tech",
+        image: "images/MERCEDESBENZ-CLASEC.png"
+    },
+    {
+        id: 12,
+        model: "Nissan Versa",
+        brand: "Nissan",
+        year: 2023,
+        fuel: "Gasoline",
+        owners: 145,
+        rating: 4.2,
+        commonIssues: "CVT transmission, Interior quality",
+        maintenanceCost: "$400/year",
+        description: "Affordable compact sedan with good fuel economy",
+        image: "images/NISSAN-VERSA.png"
+    },
+    {
+        id: 13,
+        model: "Tesla Model 3",
+        brand: "Tesla",
+        year: 2024,
+        fuel: "Electric",
+        owners: 421,
+        rating: 4.8,
+        commonIssues: "Touchscreen, Battery degradation",
+        maintenanceCost: "$300/year",
+        description: "Electric sedan with autopilot capabilities",
+        image: "images/TESLA-MODEL3.png"
+    },
+    {
+        id: 14,
         model: "Toyota Camry",
+        brand: "Toyota",
         year: 2024,
         fuel: "Hybrid",
         owners: 289,
@@ -217,7 +183,59 @@ const carsData = [
         commonIssues: "Infotainment system",
         maintenanceCost: "$490/year",
         description: "Reliable midsize sedan with hybrid efficiency",
-        image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=250&fit=crop"
+        image: "images/TOYOTA-CAMRY.png"
+    },
+    {
+        id: 15,
+        model: "Toyota Corolla",
+        brand: "Toyota",
+        year: 2023,
+        fuel: "Hybrid",
+        owners: 245,
+        rating: 4.5,
+        commonIssues: "Brake wear, Battery life",
+        maintenanceCost: "$450/year",
+        description: "Reliable compact sedan with excellent fuel economy",
+        image: "images/TOYOTA-COROLLA.png"
+    },
+    {
+        id: 16,
+        model: "Toyota RAV4",
+        brand: "Toyota",
+        year: 2023,
+        fuel: "Hybrid",
+        owners: 278,
+        rating: 4.6,
+        commonIssues: "Infotainment system, Wind noise",
+        maintenanceCost: "$550/year",
+        description: "Popular compact SUV with hybrid option",
+        image: "images/TOYOTA-RAV4.png"
+    },
+    {
+        id: 17,
+        model: "Volkswagen Golf",
+        brand: "Volkswagen",
+        year: 2023,
+        fuel: "Gasoline",
+        owners: 145,
+        rating: 4.4,
+        commonIssues: "DSG transmission, Electrical",
+        maintenanceCost: "$550/year",
+        description: "German hot hatch with sporty performance",
+        image: "images/VOLKSWAGEN-GOLF.png"
+    },
+    {
+        id: 18,
+        model: "Volvo XC40",
+        brand: "Volvo",
+        year: 2023,
+        fuel: "Gasoline",
+        owners: 156,
+        rating: 4.5,
+        commonIssues: "Infotainment system, Minor electrical",
+        maintenanceCost: "$600/year",
+        description: "Premium compact SUV with Scandinavian design",
+        image: "images/VOLVO-XC40.png"
     }
 ];
 
@@ -236,7 +254,7 @@ let compareModal;
 
 // Initialize the page
 export function initCarsPage() {
-    console.log('Initializing cars page...');
+    console.log('Initializing cars page with local images...');
     
     // Get DOM elements
     carsContainer = document.getElementById('cars-container');
@@ -378,6 +396,12 @@ function applyFilters() {
             case 'name':
                 filteredCars.sort((a, b) => a.model.localeCompare(b.model));
                 break;
+            case 'rating':
+                filteredCars.sort((a, b) => b.rating - a.rating);
+                break;
+            case 'cost-low':
+                filteredCars.sort((a, b) => parseFloat(a.maintenanceCost.replace('$', '')) - parseFloat(b.maintenanceCost.replace('$', '')));
+                break;
         }
     }
     
@@ -393,6 +417,7 @@ function resetFilters() {
     document.getElementById('sort-by').value = 'popularity';
     localStorage.removeItem('carFilters');
     applyFilters();
+    showNotification('Filters reset to default');
 }
 
 // Set view mode (grid/list)
@@ -409,6 +434,8 @@ function setView(view) {
     
     // Re-render cars with new view
     displayCars();
+    
+    showNotification(`View changed to ${view} view`);
 }
 
 // Display cars in the container
@@ -452,9 +479,15 @@ function createCarCard(car) {
     card.dataset.id = car.id;
     
     card.innerHTML = `
-        <img src="${car.image}" alt="${car.model}" class="car-image" loading="lazy">
+        <div class="car-image-container">
+            <img src="${car.image}" alt="${car.model}" class="car-image" loading="lazy">
+            ${isFavorited ? '<div class="favorite-badge">♥ Favorite</div>' : ''}
+        </div>
         <div class="car-content">
-            <h3 class="car-title">${car.model}</h3>
+            <div class="car-header">
+                <h3 class="car-title">${car.model}</h3>
+                <span class="car-brand">${car.brand}</span>
+            </div>
             <div class="car-stats">
                 <div class="stat">
                     <span class="stat-label">Year:</span>
@@ -473,10 +506,6 @@ function createCarCard(car) {
                     <span class="stat-value">${car.rating}/5</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-label">Issues:</span>
-                    <span class="stat-value">${car.commonIssues.split(',')[0]}</span>
-                </div>
-                <div class="stat">
                     <span class="stat-label">Cost/Yr:</span>
                     <span class="stat-value">${car.maintenanceCost}</span>
                 </div>
@@ -487,6 +516,9 @@ function createCarCard(car) {
                 </button>
                 <button class="compare-action-btn ${isCompared ? 'compared' : ''}" onclick="toggleCompare(${car.id})">
                     ${isCompared ? '✓ Compared' : 'Compare'}
+                </button>
+                <button class="favorite-action-btn ${isFavorited ? 'favorited' : ''}" onclick="toggleFavorite(${car.id})">
+                    ${isFavorited ? '♥' : '♡'}
                 </button>
             </div>
         </div>
@@ -508,6 +540,7 @@ export async function showCarDetails(carId) {
         document.getElementById('modal-car-img').src = car.image;
         document.getElementById('modal-car-img').alt = car.model;
         document.getElementById('modal-car-title').textContent = car.model;
+        document.getElementById('modal-car-brand').textContent = car.brand;
         document.getElementById('modal-car-year').textContent = car.year;
         document.getElementById('modal-car-fuel').textContent = car.fuel;
         document.getElementById('modal-car-owners').textContent = car.owners;
@@ -527,6 +560,7 @@ export async function showCarDetails(carId) {
         const compareBtn = document.getElementById('compare-btn');
         const isCompared = comparedCars.includes(carId);
         compareBtn.innerHTML = `<span class="compare-icon">${isCompared ? '✓' : '⚖'}</span> ${isCompared ? 'Remove from Compare' : 'Compare'}`;
+        compareBtn.classList.toggle('compared', isCompared);
         compareBtn.onclick = () => toggleCompare(carId);
         
         // Show modal
@@ -537,7 +571,7 @@ export async function showCarDetails(carId) {
         
     } catch (error) {
         console.error('Error showing car details:', error);
-        alert('Could not load car details. Please try again.');
+        showNotification('Could not load car details. Please try again.', 'error');
     }
 }
 
@@ -547,22 +581,24 @@ export function toggleFavorite(carId) {
     
     if (index > -1) {
         favorites.splice(index, 1);
+        showNotification('Removed from favorites');
     } else {
         favorites.push(carId);
+        showNotification('Added to favorites');
     }
     
     localStorage.setItem('carFavorites', JSON.stringify(favorites));
     
-    // Update UI if modal is open
+    // Update UI
+    displayCars();
+    
+    // Update modal if open
     const favoriteBtn = document.getElementById('favorite-btn');
-    if (favoriteBtn) {
+    if (favoriteBtn && document.getElementById('modal-car-title').textContent === carsData.find(c => c.id === carId)?.model) {
         const isFavorited = favorites.includes(carId);
         favoriteBtn.innerHTML = `<span class="heart-icon">${isFavorited ? '♥' : '♡'}</span> ${isFavorited ? 'Remove Favorite' : 'Add to Favorites'}`;
         favoriteBtn.classList.toggle('favorited', isFavorited);
     }
-    
-    // Show notification
-    showNotification(isFavorited ? 'Added to favorites' : 'Removed from favorites');
 }
 
 // Toggle compare status
@@ -571,12 +607,14 @@ export function toggleCompare(carId) {
     
     if (index > -1) {
         comparedCars.splice(index, 1);
+        showNotification('Removed from comparison');
     } else {
         if (comparedCars.length >= 3) {
-            alert('You can compare up to 3 cars at a time.');
+            showNotification('You can compare up to 3 cars at a time.', 'warning');
             return;
         }
         comparedCars.push(carId);
+        showNotification('Added to comparison');
     }
     
     localStorage.setItem('comparedCars', JSON.stringify(comparedCars));
@@ -584,14 +622,18 @@ export function toggleCompare(carId) {
     // Update UI
     displayCars();
     
-    // If compare modal is open, update it
+    // Update modal if open
+    const compareBtn = document.getElementById('compare-btn');
+    if (compareBtn && document.getElementById('modal-car-title').textContent === carsData.find(c => c.id === carId)?.model) {
+        const isCompared = comparedCars.includes(carId);
+        compareBtn.innerHTML = `<span class="compare-icon">${isCompared ? '✓' : '⚖'}</span> ${isCompared ? 'Remove from Compare' : 'Compare'}`;
+        compareBtn.classList.toggle('compared', isCompared);
+    }
+    
+    // Update compare modal if open
     if (comparedCars.length > 0) {
         updateCompareModal();
     }
-    
-    // Show notification
-    const isCompared = comparedCars.includes(carId);
-    showNotification(isCompared ? 'Added to comparison' : 'Removed from comparison');
 }
 
 // Update compare modal
@@ -606,43 +648,60 @@ function updateCompareModal() {
     
     // Create comparison table
     let tableHTML = `
-        <table class="compare-table">
-            <thead>
-                <tr>
-                    <th>Property</th>
-                    ${comparedCarsData.map(car => `<th>${car.model}</th>`).join('')}
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Year</td>
-                    ${comparedCarsData.map(car => `<td>${car.year}</td>`).join('')}
-                </tr>
-                <tr>
-                    <td>Fuel Type</td>
-                    ${comparedCarsData.map(car => `<td>${car.fuel}</td>`).join('')}
-                </tr>
-                <tr>
-                    <td>Owners in Community</td>
-                    ${comparedCarsData.map(car => `<td>${car.owners}</td>`).join('')}
-                </tr>
-                <tr>
-                    <td>Rating</td>
-                    ${comparedCarsData.map(car => `<td>${car.rating}/5</td>`).join('')}
-                </tr>
-                <tr>
-                    <td>Common Issues</td>
-                    ${comparedCarsData.map(car => `<td>${car.commonIssues}</td>`).join('')}
-                </tr>
-                <tr>
-                    <td>Maintenance Cost</td>
-                    ${comparedCarsData.map(car => `<td>${car.maintenanceCost}</td>`).join('')}
-                </tr>
-            </tbody>
-        </table>
+        <div class="compare-table-container">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        ${comparedCarsData.map(car => `<th>${car.model}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Brand</td>
+                        ${comparedCarsData.map(car => `<td>${car.brand}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        ${comparedCarsData.map(car => `<td>${car.year}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td>Fuel Type</td>
+                        ${comparedCarsData.map(car => `<td>${car.fuel}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td>Owners in Community</td>
+                        ${comparedCarsData.map(car => `<td>${car.owners}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td>Rating</td>
+                        ${comparedCarsData.map(car => `<td>${car.rating}/5</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td>Common Issues</td>
+                        ${comparedCarsData.map(car => `<td>${car.commonIssues}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td>Maintenance Cost</td>
+                        ${comparedCarsData.map(car => `<td>${car.maintenanceCost}</td>`).join('')}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     `;
     
     compareContainer.innerHTML = tableHTML;
+}
+
+// Show comparison modal
+export function showComparison() {
+    if (comparedCars.length === 0) {
+        showNotification('Add cars to compare first', 'warning');
+        return;
+    }
+    
+    updateCompareModal();
+    compareModal.showModal();
 }
 
 // Clear comparison
@@ -651,34 +710,8 @@ function clearComparison() {
     localStorage.removeItem('comparedCars');
     displayCars();
     updateCompareModal();
+    compareModal.close();
     showNotification('Comparison cleared');
-}
-
-// Show notification
-function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: #FA0001;
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 4px;
-        z-index: 1000;
-        animation: slideIn 0.3s ease;
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Remove after 3 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
 }
 
 // Update last viewed time
@@ -707,20 +740,7 @@ window.showCarDetails = showCarDetails;
 window.toggleFavorite = toggleFavorite;
 window.toggleCompare = toggleCompare;
 window.resetFilters = resetFilters;
-
-// Add CSS for notifications
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes slideOut {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-    }
-`;
-document.head.appendChild(style);
+window.showComparison = showComparison;
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
