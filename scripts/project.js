@@ -202,99 +202,7 @@ export function setupWayfinding() {
 }
 
 // ===== PREFERENCES MODAL =====
-export function setupPreferencesModal() {
-    const preferencesBtn = document.querySelector('.preferences-btn');
-    const preferencesModal = document.getElementById('preferences-modal');
-    
-    if (!preferencesBtn || !preferencesModal) return;
-    
-    // Load saved preferences
-    loadPreferences();
-    
-    // Open modal
-    preferencesBtn.addEventListener('click', () => {
-        preferencesModal.showModal();
-    });
-    
-    // Close modal
-    preferencesModal.addEventListener('click', (e) => {
-        if (e.target === preferencesModal) {
-            preferencesModal.close();
-        }
-    });
-    
-    // Handle form submission
-    const preferencesForm = document.getElementById('preferences-form');
-    if (preferencesForm) {
-        preferencesForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            savePreferences();
-            preferencesModal.close();
-            showNotification('Preferences saved successfully');
-        });
-    }
-    
-    // Cancel button
-    const cancelBtn = document.querySelector('.cancel-btn');
-    if (cancelBtn) {
-        cancelBtn.addEventListener('click', () => {
-            preferencesModal.close();
-        });
-    }
-}
-
-// Load preferences from localStorage
-function loadPreferences() {
-    const theme = localStorage.getItem('theme') || 'dark';
-    const language = localStorage.getItem('language') || 'en';
-    const notifications = localStorage.getItem('notifications') === 'true';
-    
-    const themeSelect = document.getElementById('theme-select');
-    const languageSelect = document.getElementById('language-select');
-    const notificationsCheckbox = document.getElementById('notifications');
-    
-    if (themeSelect) themeSelect.value = theme;
-    if (languageSelect) languageSelect.value = language;
-    if (notificationsCheckbox) notificationsCheckbox.checked = notifications;
-    
-    // Apply theme
-    applyTheme(theme);
-}
-
-// Save preferences to localStorage
-function savePreferences() {
-    const themeSelect = document.getElementById('theme-select');
-    const languageSelect = document.getElementById('language-select');
-    const notificationsCheckbox = document.getElementById('notifications');
-    
-    if (themeSelect) {
-        localStorage.setItem('theme', themeSelect.value);
-        applyTheme(themeSelect.value);
-    }
-    
-    if (languageSelect) {
-        localStorage.setItem('language', languageSelect.value);
-    }
-    
-    if (notificationsCheckbox) {
-        localStorage.setItem('notifications', notificationsCheckbox.checked);
-    }
-}
-
-// Apply theme to page
-function applyTheme(theme) {
-    if (theme === 'light') {
-        document.documentElement.style.setProperty('--dark-bg', '#f5f5f5');
-        document.documentElement.style.setProperty('--card-bg', '#ffffff');
-        document.documentElement.style.setProperty('--text-white', '#2b2b2b');
-        document.documentElement.style.setProperty('--text-light', '#4C4C4C');
-    } else {
-        document.documentElement.style.setProperty('--dark-bg', '#2b2b2b');
-        document.documentElement.style.setProperty('--card-bg', '#282828');
-        document.documentElement.style.setProperty('--text-white', '#ffffff');
-        document.documentElement.style.setProperty('--text-light', '#f8f8f8');
-    }
-}
+// Eliminada la función setupPreferencesModal ya que el botón fue removido
 
 // ===== NOTIFICATION SYSTEM =====
 export function showNotification(message, type = 'success') {
@@ -389,9 +297,6 @@ export function initializePage() {
         createFAQ();
         setupFAQToggle();
     }
-    
-    // Setup preferences modal
-    setupPreferencesModal();
     
     // Load car statistics if on index page
     if (window.location.pathname.includes('index.html') || 
@@ -647,19 +552,7 @@ function addStatisticsStyles() {
 }
 
 // ===== GLOBAL FUNCTIONS FOR MODALS =====
-export function openPreferencesModal() {
-    const modal = document.getElementById('preferences-modal');
-    if (modal) {
-        modal.showModal();
-    }
-}
-
-export function closePreferencesModal() {
-    const modal = document.getElementById('preferences-modal');
-    if (modal) {
-        modal.close();
-    }
-}
+// Eliminadas las funciones openPreferencesModal y closePreferencesModal
 
 // ===== INITIALIZE WHEN DOM IS LOADED =====
 document.addEventListener('DOMContentLoaded', initializePage);
@@ -671,10 +564,7 @@ export default {
     updateDates,
     setupHamburgerMenu,
     setupWayfinding,
-    setupPreferencesModal,
     showNotification,
     loadCarStatistics,
-    initializePage,
-    openPreferencesModal,
-    closePreferencesModal
+    initializePage
 };
