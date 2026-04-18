@@ -1,138 +1,41 @@
-// Lista completa de vehículos (nombres de archivo de imagen)
-const vehicleImages = [
-    "CHEVROLET_CAPTIVA_2014.png",
-    "CHEVROLET_COBALT_2008.png",
-    "CHEVROLET_CRUZE_2015.png",
-    "CHEVROLET_CRUZE_2017.png",
-    "CHEVROLET_EQUINOX_2012.png",
-    "CHEVROLET_EQUINOX_2014.png",
-    "CHEVROLET_MALIBU_2007.png",
-    "CHEVROLET_MALIBU_2013.png",
-    "CHEVROLET_S10_1998.png",
-    "CHEVROLET_SILVERADO_2014.png",
-    "CHEVROLET_SILVERADO_2020.png",
-    "CHEVROLET_TRAIL_BLAZER_2004.png",
-    "CHEVROLETO_EQUINOX_2005.png",
-    "CHRYSLER_200_2014.png",
-    "CHRYSLER_200_2015.png",
-    "CHRYSLER_AVENGER_2008.png",
-    "CHRYSLER_AVENGER_2014.png",
-    "CHRYSLER_GRAND_CARAVAN_2011.png",
-    "CHRYSLER_JOURNEY_2013.png",
-    "d0175667500ba672f885075c12c0380e.jpg",
-    "DODGE_RAM_1500_2003.png",
-    "FIAT_L500_2014.png",
-    "FORD_EDGE_2007.png",
-    "FORD_ESCAPE_2009.png",
-    "FORD_ESCAPE_2014.png",
-    "FORD_F150_2013.png",
-    "FORD_F150_2016.png",
-    "FORD_FIESTA_2017.png",
-    "FORD_FIESTA_2019.png",
-    "FORD_WINDSTAR_2001.png",
-    "GMC_BUICK_ENCLAVE_2008.png",
-    "HONDA_ACCORD_2014.png",
-    "HONDA_ACCORD_2017.png",
-    "HUMMER_H3_2007.png",
-    "JEEP_CHEROKEE_2021.png",
-    "KIA_SOUL_2013.png",
-    "MAZDA_CX7_2007.png",
-    "MERCEDESBENZ_CLASEC_2013.png",
-    "NISSAN_ALTIMA_2013.png",
-    "NISSAN_MARCH_2014.png",
-    "NISSAN_MURANO_2014.png",
-    "NISSAN_PATHFINDER_2014.png",
-    "TOYOTA_CAMRY_2011.png",
-    "TOYOTA_TACOMA_2017.png",
-    "VOLKSWAGEN_BEETLE_2015.png",
-    "VOLKSWAGEN_BETTLE_2012.png",
-    "VOLKSWAGEN_GOLF_2010.png",
-    "VOLKSWAGEN_GOLF_2014.png",
-    "VOLKSWAGEN_GOLF_MK7_2014.png",
-    "VOLKSWAGEN_GTI_MK6_2014.png",
-    "VOLKSWAGEN_GTI_MK7_2014.png",
-    "VOLKSWAGEN_JETA_2014_MK6_1.4.png",
-    "VOLKSWAGEN_JETA_2018.png",
-    "VOLKSWAGEN_JETTA_2011.png",
-    "VOLKSWAGEN_JETTA_2014_1.8.png",
-    "VOLKSWAGEN_JETTA_2019.png",
-    "VOLKSWAGEN_PASSAT_2012.png",
-    "VOLKSWAGEN_PASSAT_2017.png"
-];
+// Variable global para almacenar los vehículos
+let vehicles = [];
 
-// Función para parsear el nombre del vehículo
-function parseVehicleInfo(filename) {
-    // Remover la extensión
-    let name = filename.replace(/\.(png|jpg|jpeg)$/i, '');
-    
-    // Manejar caso especial del archivo con hash
-    if (name === "d0175667500ba672f885075c12c0380e") {
-        return {
-            brand: "Unknown",
-            model: "Unknown Vehicle",
-            year: "Unknown",
-            fullName: "Special Vehicle",
-            filename: filename
-        };
-    }
-    
-    // Separar por guión bajo
-    const parts = name.split('_');
-    
-    // La marca es la primera parte
-    let brand = parts[0];
-    
-    // Buscar el año (generalmente el último segmento que son 4 dígitos)
-    let year = "";
-    let modelParts = [];
-    
-    for (let i = 1; i < parts.length; i++) {
-        if (parts[i].match(/^\d{4}$/)) {
-            year = parts[i];
-        } else {
-            modelParts.push(parts[i]);
+// Cargar datos del JSON
+async function loadVehicles() {
+    try {
+        const response = await fetch('data/catalog.json');
+        const data = await response.json();
+        vehicles = data.vehicles;
+        
+        // Una vez cargados, inicializar todo
+        initFilters();
+        renderCatalog('all', 'all');
+        
+        // Actualizar año en footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Configurar hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        
+        if (hamburger && nav) {
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('nav-open');
+                hamburger.classList.toggle('active');
+            });
         }
+    } catch (error) {
+        console.error('Error loading vehicles:', error);
+        document.getElementById('catalog-grid').innerHTML = 
+            '<div class="no-results">Error loading catalog. Please try again later.</div>';
     }
-    
-    let model = modelParts.join(' ');
-    
-    // Formatear marca (primera letra mayúscula, resto minúscula)
-    brand = brand.charAt(0).toUpperCase() + brand.slice(1).toLowerCase();
-    
-    // Casos especiales para marcas conocidas
-    if (brand === "Chevroleto") brand = "Chevrolet";
-    if (brand === "Chrysler") brand = "Chrysler";
-    if (brand === "Dodge") brand = "Dodge";
-    if (brand === "Fiat") brand = "Fiat";
-    if (brand === "Ford") brand = "Ford";
-    if (brand === "Gmc") brand = "GMC";
-    if (brand === "Honda") brand = "Honda";
-    if (brand === "Hummer") brand = "Hummer";
-    if (brand === "Jeep") brand = "Jeep";
-    if (brand === "Kia") brand = "Kia";
-    if (brand === "Mazda") brand = "Mazda";
-    if (brand === "Mercedesbenz") brand = "Mercedes-Benz";
-    if (brand === "Nissan") brand = "Nissan";
-    if (brand === "Toyota") brand = "Toyota";
-    if (brand === "Volkswagen") brand = "Volkswagen";
-    
-    // Limpiar modelo
-    model = model.replace(/_/g, ' ');
-    
-    return {
-        brand: brand,
-        model: model,
-        year: year,
-        fullName: `${brand} ${model} ${year}`.trim(),
-        filename: filename
-    };
 }
 
-// Procesar todos los vehículos
-const vehicles = vehicleImages.map(parseVehicleInfo);
-
 // Obtener marcas únicas
-const brands = [...new Set(vehicles.map(v => v.brand))].sort();
+function getUniqueBrands() {
+    return [...new Set(vehicles.map(v => v.brand))].sort();
+}
 
 // Función para obtener modelos únicos por marca
 function getModelsByBrand(brand) {
@@ -163,32 +66,61 @@ function renderCatalog(brandFilter, modelFilter) {
         return;
     }
     
-    grid.innerHTML = filteredVehicles.map(vehicle => `
-        <div class="catalog-item">
-            <div class="catalog-image-container">
-                <img src="images/catalog/${vehicle.filename}" alt="${vehicle.fullName}" class="catalog-image" onerror="this.src='images/catalog/placeholder.png'">
-            </div>
-            <div class="catalog-info">
-                <h3 class="vehicle-title">${vehicle.fullName}</h3>
-                <div class="vehicle-details">
-                    <p><strong>Brand:</strong> ${vehicle.brand}</p>
-                    <p><strong>Model:</strong> ${vehicle.model}</p>
-                    <p><strong>Year:</strong> ${vehicle.year}</p>
+    grid.innerHTML = filteredVehicles.map(vehicle => {
+        // Generar lista de características si hay, si no mostrar placeholder
+        let featuresHtml = '';
+        if (vehicle.features && vehicle.features.length > 0) {
+            const featuresList = vehicle.features.map(feature => `<li>${feature}</li>`).join('');
+            featuresHtml = `
+                <div class="vehicle-features">
+                    <strong>Key Features:</strong>
+                    <ul>
+                        ${featuresList}
+                    </ul>
                 </div>
-                <div class="vehicle-description">
-                    <p>Characteristic features and specifications for this vehicle model.</p>
+            `;
+        } else {
+            featuresHtml = `
+                <div class="vehicle-features">
+                    <strong>Key Features:</strong>
+                    <ul>
+                        <li>###</li>
+                    </ul>
+                </div>
+            `;
+        }
+        
+        return `
+            <div class="catalog-item">
+                <div class="catalog-image-container">
+                    <img src="images/catalog/${vehicle.image}" alt="${vehicle.brand} ${vehicle.model} ${vehicle.year}" 
+                         class="catalog-image" onerror="this.src='images/catalog/placeholder.png'">
+                </div>
+                <div class="catalog-info">
+                    <h3 class="vehicle-title">${vehicle.brand} ${vehicle.model} ${vehicle.year}</h3>
+                    <div class="vehicle-details">
+                        <p><strong>Brand:</strong> ${vehicle.brand}</p>
+                        <p><strong>Model:</strong> ${vehicle.model}</p>
+                        <p><strong>Year:</strong> ${vehicle.year}</p>
+                    </div>
+                    <div class="vehicle-description">
+                        <p><strong>Description:</strong> ${vehicle.description}</p>
+                        ${featuresHtml}
+                    </div>
                 </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Inicializar filtros
 function initFilters() {
     const brandSelect = document.getElementById('brand-filter');
     const modelSelect = document.getElementById('model-filter');
+    const brands = getUniqueBrands();
     
-    // Llenar marcas
+    // Limpiar y llenar marcas
+    brandSelect.innerHTML = '<option value="all">All Brands</option>';
     brands.forEach(brand => {
         const option = document.createElement('option');
         option.value = brand;
@@ -231,26 +163,9 @@ function initFilters() {
     modelSelect.addEventListener('change', (e) => {
         renderCatalog(brandSelect.value, e.target.value);
     });
-    
-    // Render inicial
-    renderCatalog('all', 'all');
 }
 
-// Inicializar cuando el DOM esté listo
+// Iniciar la carga de datos
 document.addEventListener('DOMContentLoaded', () => {
-    initFilters();
-    
-    // Actualizar año en footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    
-    // Configurar hamburger menu
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav');
-    
-    if (hamburger && nav) {
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('nav-open');
-            hamburger.classList.toggle('active');
-        });
-    }
+    loadVehicles();
 });

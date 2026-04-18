@@ -764,7 +764,7 @@ body {
 .vehicle-title {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #FA0001;
+    color: #ffffff;
     margin-bottom: 0.8rem;
     border-bottom: 1px solid #3a3a3a;
     padding-bottom: 0.5rem;
@@ -781,7 +781,7 @@ body {
 }
 
 .vehicle-details strong {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .vehicle-description {

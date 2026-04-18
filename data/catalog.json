@@ -1,0 +1,468 @@
+{
+  "vehicles": [
+    {
+      "image": "CHEVROLET_CAPTIVA_2014.png",
+      "brand": "Chevrolet",
+      "model": "Captiva",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_COBALT_2008.png",
+      "brand": "Chevrolet",
+      "model": "Cobalt",
+      "year": "2008",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_CRUZE_2015.png",
+      "brand": "Chevrolet",
+      "model": "Cruze",
+      "year": "2015",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_CRUZE_2017.png",
+      "brand": "Chevrolet",
+      "model": "Cruze",
+      "year": "2017",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_EQUINOX_2012.png",
+      "brand": "Chevrolet",
+      "model": "Equinox",
+      "year": "2012",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_EQUINOX_2014.png",
+      "brand": "Chevrolet",
+      "model": "Equinox",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_MALIBU_2007.png",
+      "brand": "Chevrolet",
+      "model": "Malibu",
+      "year": "2007",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_MALIBU_2013.png",
+      "brand": "Chevrolet",
+      "model": "Malibu",
+      "year": "2013",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_S10_1998.png",
+      "brand": "Chevrolet",
+      "model": "S10",
+      "year": "1998",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_SILVERADO_2014.png",
+      "brand": "Chevrolet",
+      "model": "Silverado",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_SILVERADO_2020.png",
+      "brand": "Chevrolet",
+      "model": "Silverado",
+      "year": "2020",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLET_TRAIL_BLAZER_2004.png",
+      "brand": "Chevrolet",
+      "model": "Trail Blazer",
+      "year": "2004",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHEVROLETO_EQUINOX_2005.png",
+      "brand": "Chevrolet",
+      "model": "Equinox",
+      "year": "2005",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHRYSLER_200_2014.png",
+      "brand": "Chrysler",
+      "model": "200",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHRYSLER_200_2015.png",
+      "brand": "Chrysler",
+      "model": "200",
+      "year": "2015",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHRYSLER_AVENGER_2008.png",
+      "brand": "Chrysler",
+      "model": "Avenger",
+      "year": "2008",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHRYSLER_AVENGER_2014.png",
+      "brand": "Chrysler",
+      "model": "Avenger",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHRYSLER_GRAND_CARAVAN_2011.png",
+      "brand": "Chrysler",
+      "model": "Grand Caravan",
+      "year": "2011",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "CHRYSLER_JOURNEY_2013.png",
+      "brand": "Chrysler",
+      "model": "Journey",
+      "year": "2013",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "d0175667500ba672f885075c12c0380e.jpg",
+      "brand": "Unknown",
+      "model": "Special Vehicle",
+      "year": "Unknown",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "DODGE_RAM_1500_2003.png",
+      "brand": "Dodge",
+      "model": "Ram 1500",
+      "year": "2003",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FIAT_L500_2014.png",
+      "brand": "Fiat",
+      "model": "500",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_EDGE_2007.png",
+      "brand": "Ford",
+      "model": "Edge",
+      "year": "2007",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_ESCAPE_2009.png",
+      "brand": "Ford",
+      "model": "Escape",
+      "year": "2009",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_ESCAPE_2014.png",
+      "brand": "Ford",
+      "model": "Escape",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_F150_2013.png",
+      "brand": "Ford",
+      "model": "F-150",
+      "year": "2013",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_F150_2016.png",
+      "brand": "Ford",
+      "model": "F-150",
+      "year": "2016",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_FIESTA_2017.png",
+      "brand": "Ford",
+      "model": "Fiesta",
+      "year": "2017",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_FIESTA_2019.png",
+      "brand": "Ford",
+      "model": "Fiesta",
+      "year": "2019",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "FORD_WINDSTAR_2001.png",
+      "brand": "Ford",
+      "model": "Windstar",
+      "year": "2001",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "GMC_BUICK_ENCLAVE_2008.png",
+      "brand": "GMC",
+      "model": "Buick Enclave",
+      "year": "2008",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "HONDA_ACCORD_2014.png",
+      "brand": "Honda",
+      "model": "Accord",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "HONDA_ACCORD_2017.png",
+      "brand": "Honda",
+      "model": "Accord",
+      "year": "2017",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "HUMMER_H3_2007.png",
+      "brand": "Hummer",
+      "model": "H3",
+      "year": "2007",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "JEEP_CHEROKEE_2021.png",
+      "brand": "Jeep",
+      "model": "Cherokee",
+      "year": "2021",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "KIA_SOUL_2013.png",
+      "brand": "Kia",
+      "model": "Soul",
+      "year": "2013",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "MAZDA_CX7_2007.png",
+      "brand": "Mazda",
+      "model": "CX-7",
+      "year": "2007",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "MERCEDESBENZ_CLASEC_2013.png",
+      "brand": "Mercedes-Benz",
+      "model": "Clase C",
+      "year": "2013",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "NISSAN_ALTIMA_2013.png",
+      "brand": "Nissan",
+      "model": "Altima",
+      "year": "2013",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "NISSAN_MARCH_2014.png",
+      "brand": "Nissan",
+      "model": "March",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "NISSAN_MURANO_2014.png",
+      "brand": "Nissan",
+      "model": "Murano",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "NISSAN_PATHFINDER_2014.png",
+      "brand": "Nissan",
+      "model": "Pathfinder",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "TOYOTA_CAMRY_2011.png",
+      "brand": "Toyota",
+      "model": "Camry",
+      "year": "2011",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "TOYOTA_TACOMA_2017.png",
+      "brand": "Toyota",
+      "model": "Tacoma",
+      "year": "2017",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_BEETLE_2015.png",
+      "brand": "Volkswagen",
+      "model": "Beetle",
+      "year": "2015",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_BETTLE_2012.png",
+      "brand": "Volkswagen",
+      "model": "Beetle",
+      "year": "2012",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_GOLF_2010.png",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "year": "2010",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_GOLF_2014.png",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_GOLF_MK7_2014.png",
+      "brand": "Volkswagen",
+      "model": "Golf MK7",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_GTI_MK6_2014.png",
+      "brand": "Volkswagen",
+      "model": "GTI MK6",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_GTI_MK7_2014.png",
+      "brand": "Volkswagen",
+      "model": "GTI MK7",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_JETA_2014_MK6_1.4.png",
+      "brand": "Volkswagen",
+      "model": "Jetta MK6 1.4",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_JETA_2018.png",
+      "brand": "Volkswagen",
+      "model": "Jetta",
+      "year": "2018",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_JETTA_2011.png",
+      "brand": "Volkswagen",
+      "model": "Jetta",
+      "year": "2011",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_JETTA_2014_1.8.png",
+      "brand": "Volkswagen",
+      "model": "Jetta 1.8",
+      "year": "2014",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_JETTA_2019.png",
+      "brand": "Volkswagen",
+      "model": "Jetta",
+      "year": "2019",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_PASSAT_2012.png",
+      "brand": "Volkswagen",
+      "model": "Passat",
+      "year": "2012",
+      "features": [],
+      "description": "###"
+    },
+    {
+      "image": "VOLKSWAGEN_PASSAT_2017.png",
+      "brand": "Volkswagen",
+      "model": "Passat",
+      "year": "2017",
+      "features": [],
+      "description": "###"
+    }
+  ]
+}
