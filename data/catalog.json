@@ -2,409 +2,409 @@
   "vehicles": [
     {
       "image": "CHEVROLET_CAPTIVA_2014.png",
-      "brand": "Chevrolet",
-      "model": "Captiva",
+      "brand": "CHEVROLET",
+      "model": "CAPTIVA",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "CHEVROLET_COBALT_2008.png",
-      "brand": "Chevrolet",
-      "model": "Cobalt",
+      "brand": "CHEVROLET",
+      "model": "COBALT",
       "year": "2008",
-      "description": "###"
+      "description": "Motor 2.2"
     },
     {
       "image": "CHEVROLET_CRUZE_2015.png",
-      "brand": "Chevrolet",
-      "model": "Cruze",
+      "brand": "CHEVROLET",
+      "model": "CRUZE",
       "year": "2015",
-      "description": "###"
+      "description": "Motor 1.4 Turbo"
     },
     {
       "image": "CHEVROLET_CRUZE_2017.png",
-      "brand": "Chevrolet",
-      "model": "Cruze",
+      "brand": "CHEVROLET",
+      "model": "CRUZE",
       "year": "2017",
-      "description": "###"
+      "description": "Motor 1.4 Turbo"
     },
     {
       "image": "CHEVROLET_EQUINOX_2012.png",
-      "brand": "Chevrolet",
-      "model": "Equinox",
+      "brand": "CHEVROLET",
+      "model": "EQUINOX",
       "year": "2012",
-      "description": "###"
+      "description": "Motor ###"
     },
     {
       "image": "CHEVROLET_EQUINOX_2014.png",
-      "brand": "Chevrolet",
-      "model": "Equinox",
+      "brand": "CHEVROLET",
+      "model": "EQUINOX",
       "year": "2014",
-      "description": "###"
+      "description": "Motor ###"
     },
     {
       "image": "CHEVROLET_MALIBU_2007.png",
-      "brand": "Chevrolet",
-      "model": "Malibu",
+      "brand": "CHEVROLET",
+      "model": "MALIBU",
       "year": "2007",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "CHEVROLET_MALIBU_2013.png",
-      "brand": "Chevrolet",
-      "model": "Malibu",
+      "brand": "CHEVROLET",
+      "model": "MALIBU",
       "year": "2013",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "CHEVROLET_S10_1998.png",
-      "brand": "Chevrolet",
+      "brand": "CHEVROLET",
       "model": "S10",
       "year": "1998",
-      "description": "###"
+      "description": "Motor 4.3"
     },
     {
       "image": "CHEVROLET_SILVERADO_2014.png",
-      "brand": "Chevrolet",
-      "model": "Silverado",
+      "brand": "CHEVROLET",
+      "model": "SILVERADO",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 4.3"
     },
     {
       "image": "CHEVROLET_SILVERADO_2020.png",
-      "brand": "Chevrolet",
-      "model": "Silverado",
+      "brand": "CHEVROLET",
+      "model": "SILVERADO",
       "year": "2020",
-      "description": "###"
+      "description": "Motor 5.3 Z71"
     },
     {
       "image": "CHEVROLET_TRAIL_BLAZER_2004.png",
-      "brand": "Chevrolet",
-      "model": "Trail Blazer",
+      "brand": "CHEVROLET",
+      "model": "TRAILBLAZER",
       "year": "2004",
-      "description": "###"
+      "description": "Motor 4.2"
     },
     {
       "image": "CHEVROLETO_EQUINOX_2005.png",
-      "brand": "Chevrolet",
-      "model": "Equinox",
+      "brand": "CHEVROLET",
+      "model": "EQUINOX",
       "year": "2005",
-      "description": "###"
+      "description": "Motor 3.4 sencilla"
     },
     {
       "image": "CHRYSLER_200_2014.png",
-      "brand": "Chrysler",
+      "brand": "CHRYSLER",
       "model": "200",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "CHRYSLER_200_2015.png",
-      "brand": "Chrysler",
+      "brand": "CHRYSLER",
       "model": "200",
       "year": "2015",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "CHRYSLER_AVENGER_2008.png",
-      "brand": "Chrysler",
-      "model": "Avenger",
+      "brand": "CHRYSLER/DODGE",
+      "model": "AVENGER",
       "year": "2008",
-      "description": "###"
+      "description": "Motor 2.7"
     },
     {
       "image": "CHRYSLER_AVENGER_2014.png",
-      "brand": "Chrysler",
-      "model": "Avenger",
+      "brand": "CHRYSLER/DODGE",
+      "model": "AVENGER",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "CHRYSLER_GRAND_CARAVAN_2011.png",
-      "brand": "Chrysler",
-      "model": "Grand Caravan",
+      "brand": "CHRYSLER/DODGE",
+      "model": "GRAND CARAVAN",
       "year": "2011",
-      "description": "###"
+      "description": "Motor 3.6"
     },
     {
       "image": "CHRYSLER_JOURNEY_2013.png",
-      "brand": "Chrysler",
-      "model": "Journey",
+      "brand": "CHRYSLER/DODGE",
+      "model": "JOURNEY",
       "year": "2013",
-      "description": "###"
+      "description": "Motor 3.6"
     },
     {
       "image": "d0175667500ba672f885075c12c0380e.jpg",
-      "brand": "Unknown",
-      "model": "Special Vehicle",
-      "year": "Unknown",
+      "brand": "UNKNOWN",
+      "model": "SPECIAL VEHICLE",
+      "year": "UNKNOWN",
       "description": "###"
     },
     {
       "image": "DODGE_RAM_1500_2003.png",
-      "brand": "Dodge",
-      "model": "Ram 1500",
+      "brand": "DODGE",
+      "model": "RAM 1500",
       "year": "2003",
-      "description": "###"
+      "description": "Motor 4.7"
     },
     {
       "image": "FIAT_L500_2014.png",
-      "brand": "Fiat",
+      "brand": "FIAT",
       "model": "500",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 1.4"
     },
     {
       "image": "FORD_EDGE_2007.png",
-      "brand": "Ford",
-      "model": "Edge",
+      "brand": "FORD",
+      "model": "EDGE",
       "year": "2007",
-      "description": "###"
+      "description": "Motor 3.5"
     },
     {
       "image": "FORD_ESCAPE_2009.png",
-      "brand": "Ford",
-      "model": "Escape",
+      "brand": "FORD",
+      "model": "ESCAPE",
       "year": "2009",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "FORD_ESCAPE_2014.png",
-      "brand": "Ford",
-      "model": "Escape",
+      "brand": "FORD",
+      "model": "ESCAPE",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 1.6 Turbo 4x4"
     },
     {
       "image": "FORD_F150_2013.png",
-      "brand": "Ford",
-      "model": "F-150",
+      "brand": "FORD",
+      "model": "F150",
       "year": "2013",
-      "description": "###"
+      "description": "Motor 3.5"
     },
     {
       "image": "FORD_F150_2016.png",
-      "brand": "Ford",
-      "model": "F-150",
+      "brand": "FORD",
+      "model": "F150",
       "year": "2016",
-      "description": "###"
+      "description": "Motor 3.5"
     },
     {
       "image": "FORD_FIESTA_2017.png",
-      "brand": "Ford",
-      "model": "Fiesta",
+      "brand": "FORD",
+      "model": "FIESTA",
       "year": "2017",
-      "description": "###"
+      "description": "Motor 1.6"
     },
     {
       "image": "FORD_FIESTA_2019.png",
-      "brand": "Ford",
-      "model": "Fiesta",
+      "brand": "FORD",
+      "model": "FIESTA",
       "year": "2019",
-      "description": "###"
+      "description": "Motor 1.6"
     },
     {
       "image": "FORD_WINDSTAR_2001.png",
-      "brand": "Ford",
-      "model": "Windstar",
+      "brand": "FORD",
+      "model": "WINDSTAR",
       "year": "2001",
-      "description": "###"
+      "description": "Motor 3.8"
     },
     {
       "image": "GMC_BUICK_ENCLAVE_2008.png",
       "brand": "GMC",
-      "model": "Buick Enclave",
+      "model": "BUICK ENCLAVE",
       "year": "2008",
-      "description": "###"
+      "description": "Motor 3.6"
     },
     {
       "image": "HONDA_ACCORD_2014.png",
-      "brand": "Honda",
-      "model": "Accord",
+      "brand": "HONDA",
+      "model": "ACCORD",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "HONDA_ACCORD_2017.png",
-      "brand": "Honda",
-      "model": "Accord",
+      "brand": "HONDA",
+      "model": "ACCORD",
       "year": "2017",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "HUMMER_H3_2007.png",
-      "brand": "Hummer",
+      "brand": "HUMMER",
       "model": "H3",
       "year": "2007",
-      "description": "###"
+      "description": "Motor 3.7"
     },
     {
       "image": "JEEP_CHEROKEE_2021.png",
-      "brand": "Jeep",
-      "model": "Cherokee",
+      "brand": "JEEP",
+      "model": "CHEROKEE",
       "year": "2021",
-      "description": "###"
+      "description": "Motor 3.6"
     },
     {
       "image": "KIA_SOUL_2013.png",
-      "brand": "Kia",
-      "model": "Soul",
+      "brand": "KIA",
+      "model": "SOUL",
       "year": "2013",
-      "description": "###"
+      "description": "Motor 1.6"
     },
     {
       "image": "MAZDA_CX7_2007.png",
-      "brand": "Mazda",
+      "brand": "MAZDA",
       "model": "CX-7",
       "year": "2007",
-      "description": "###"
+      "description": "Motor 2.3 Turbo"
     },
     {
       "image": "MERCEDESBENZ_CLASEC_2013.png",
-      "brand": "Mercedes-Benz",
-      "model": "Clase C",
+      "brand": "MERCEDES-BENZ",
+      "model": "CLASE C",
       "year": "2013",
-      "description": "###"
+      "description": "Motor 3.5"
     },
     {
       "image": "NISSAN_ALTIMA_2013.png",
-      "brand": "Nissan",
-      "model": "Altima",
+      "brand": "NISSAN",
+      "model": "ALTIMA",
       "year": "2013",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "NISSAN_MARCH_2014.png",
-      "brand": "Nissan",
-      "model": "March",
-      "year": "2014",
-      "description": "###"
+      "brand": "NISSAN",
+      "model": "MARCH",
+      "year": "2015",
+      "description": "Motor 1.6"
     },
     {
       "image": "NISSAN_MURANO_2014.png",
-      "brand": "Nissan",
-      "model": "Murano",
+      "brand": "NISSAN",
+      "model": "MURANO",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 3.5"
     },
     {
       "image": "NISSAN_PATHFINDER_2014.png",
-      "brand": "Nissan",
-      "model": "Pathfinder",
+      "brand": "NISSAN",
+      "model": "PATHFINDER",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 3.5"
     },
     {
       "image": "TOYOTA_CAMRY_2011.png",
-      "brand": "Toyota",
-      "model": "Camry",
+      "brand": "TOYOTA",
+      "model": "CAMRY",
       "year": "2011",
-      "description": "###"
+      "description": "Motor 2.4"
     },
     {
       "image": "TOYOTA_TACOMA_2017.png",
-      "brand": "Toyota",
-      "model": "Tacoma",
+      "brand": "TOYOTA",
+      "model": "TACOMA",
       "year": "2017",
-      "description": "###"
+      "description": "Motor 3.5 4x4"
     },
     {
       "image": "VOLKSWAGEN_BEETLE_2015.png",
-      "brand": "Volkswagen",
-      "model": "Beetle",
+      "brand": "VOLKSWAGEN",
+      "model": "BEETLE",
       "year": "2015",
-      "description": "###"
+      "description": "Motor 2.0"
     },
     {
       "image": "VOLKSWAGEN_BETTLE_2012.png",
-      "brand": "Volkswagen",
-      "model": "Beetle",
+      "brand": "VOLKSWAGEN",
+      "model": "BEETLE",
       "year": "2012",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "VOLKSWAGEN_GOLF_2010.png",
-      "brand": "Volkswagen",
-      "model": "Golf",
+      "brand": "VOLKSWAGEN",
+      "model": "GOLF",
       "year": "2010",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "VOLKSWAGEN_GOLF_2014.png",
-      "brand": "Volkswagen",
-      "model": "Golf",
+      "brand": "VOLKSWAGEN",
+      "model": "GOLF",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 2.0"
     },
     {
       "image": "VOLKSWAGEN_GOLF_MK7_2014.png",
-      "brand": "Volkswagen",
-      "model": "Golf MK7",
+      "brand": "VOLKSWAGEN",
+      "model": "GOLF MK7",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 1.4"
     },
     {
       "image": "VOLKSWAGEN_GTI_MK6_2014.png",
-      "brand": "Volkswagen",
+      "brand": "VOLKSWAGEN",
       "model": "GTI MK6",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 2.0"
     },
     {
       "image": "VOLKSWAGEN_GTI_MK7_2014.png",
-      "brand": "Volkswagen",
+      "brand": "VOLKSWAGEN",
       "model": "GTI MK7",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 2.0"
     },
     {
       "image": "VOLKSWAGEN_JETA_2014_MK6_1.4.png",
-      "brand": "Volkswagen",
-      "model": "Jetta MK6 1.4",
+      "brand": "VOLKSWAGEN",
+      "model": "JETTA",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 1.4 MK6"
     },
     {
       "image": "VOLKSWAGEN_JETA_2018.png",
-      "brand": "Volkswagen",
-      "model": "Jetta",
+      "brand": "VOLKSWAGEN",
+      "model": "JETTA",
       "year": "2018",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "VOLKSWAGEN_JETTA_2011.png",
-      "brand": "Volkswagen",
-      "model": "Jetta",
+      "brand": "VOLKSWAGEN",
+      "model": "JETTA",
       "year": "2011",
-      "description": "###"
+      "description": "Motor 2.0"
     },
     {
       "image": "VOLKSWAGEN_JETTA_2014_1.8.png",
-      "brand": "Volkswagen",
-      "model": "Jetta 1.8",
+      "brand": "VOLKSWAGEN",
+      "model": "JETTA",
       "year": "2014",
-      "description": "###"
+      "description": "Motor 1.8 Turbo"
     },
     {
       "image": "VOLKSWAGEN_JETTA_2019.png",
-      "brand": "Volkswagen",
-      "model": "Jetta",
+      "brand": "VOLKSWAGEN",
+      "model": "JETTA",
       "year": "2019",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "VOLKSWAGEN_PASSAT_2012.png",
-      "brand": "Volkswagen",
-      "model": "Passat",
+      "brand": "VOLKSWAGEN",
+      "model": "PASSAT",
       "year": "2012",
-      "description": "###"
+      "description": "Motor 2.5"
     },
     {
       "image": "VOLKSWAGEN_PASSAT_2017.png",
-      "brand": "Volkswagen",
-      "model": "Passat",
+      "brand": "VOLKSWAGEN",
+      "model": "PASSAT CC",
       "year": "2017",
-      "description": "###"
+      "description": "Motor 2.0"
     }
   ]
 }
