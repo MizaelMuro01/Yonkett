@@ -45,7 +45,7 @@ function getModelsByBrand(brand) {
     return [...new Set(vehicles.filter(v => v.brand === brand).map(v => v.model))].sort();
 }
 
-// Renderizar el catálogo (VERSIÓN SIMPLIFICADA SIN REDUNDANCIAS)
+// Renderizar el catálogo - VERSIÓN SIMPLIFICADA (SOLO TÍTULO + DESCRIPCIÓN)
 function renderCatalog(brandFilter, modelFilter) {
     const grid = document.getElementById('catalog-grid');
     
@@ -66,23 +66,10 @@ function renderCatalog(brandFilter, modelFilter) {
         return;
     }
     
+    // IMPORTANTE: Aquí SOLO muestro el título y la descripción, nada más
     grid.innerHTML = filteredVehicles.map(vehicle => {
-        // Generar título completo: MARCA MODELO AÑO
+        // Título completo: MARCA MODELO AÑO
         const fullTitle = `${vehicle.brand} ${vehicle.model} ${vehicle.year}`.trim();
-        
-        // Generar características si existen
-        let featuresHtml = '';
-        if (vehicle.features && vehicle.features.length > 0) {
-            const featuresList = vehicle.features.map(feature => `<li>${feature}</li>`).join('');
-            featuresHtml = `
-                <div class="vehicle-features">
-                    <strong>Características:</strong>
-                    <ul>
-                        ${featuresList}
-                    </ul>
-                </div>
-            `;
-        }
         
         return `
             <div class="catalog-item">
@@ -94,7 +81,6 @@ function renderCatalog(brandFilter, modelFilter) {
                     <h3 class="vehicle-title">${fullTitle}</h3>
                     <div class="vehicle-description">
                         <p>${vehicle.description}</p>
-                        ${featuresHtml}
                     </div>
                 </div>
             </div>
