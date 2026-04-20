@@ -33,14 +33,14 @@
       "brand": "CHEVROLET",
       "model": "EQUINOX",
       "year": "2012",
-      "description": "Motor ###"
+      "description": "Motor 2.4"
     },
     {
       "image": "CHEVROLET_EQUINOX_2014.png",
       "brand": "CHEVROLET",
       "model": "EQUINOX",
       "year": "2014",
-      "description": "Motor ###"
+      "description": "Motor 3.0"
     },
     {
       "image": "CHEVROLET_MALIBU_2007.png",
@@ -135,10 +135,10 @@
     },
     {
       "image": "d0175667500ba672f885075c12c0380e.jpg",
-      "brand": "UNKNOWN",
-      "model": "SPECIAL VEHICLE",
-      "year": "UNKNOWN",
-      "description": "###"
+      "brand": "HONDA",
+      "model": "CIVIC",
+      "year": "1993",
+      "description": "Motor 1.6"
     },
     {
       "image": "DODGE_RAM_1500_2003.png",
