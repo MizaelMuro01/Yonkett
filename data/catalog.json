@@ -2,14 +2,16 @@
   "vehicles": [
     {
       "image": "CHEVROLET_CAPTIVA_2014.png",
-      "description": "Motor 2.4"
+      "brand": "Chevrolet",
+      "model": "Captiva",
+      "year": "2014",
+      "description": "###"
     },
     {
       "image": "CHEVROLET_COBALT_2008.png",
       "brand": "Chevrolet",
       "model": "Cobalt",
       "year": "2008",
-      "features": [],
       "description": "###"
     },
     {
@@ -17,7 +19,6 @@
       "brand": "Chevrolet",
       "model": "Cruze",
       "year": "2015",
-      "features": [],
       "description": "###"
     },
     {
@@ -25,7 +26,6 @@
       "brand": "Chevrolet",
       "model": "Cruze",
       "year": "2017",
-      "features": [],
       "description": "###"
     },
     {
@@ -33,7 +33,6 @@
       "brand": "Chevrolet",
       "model": "Equinox",
       "year": "2012",
-      "features": [],
       "description": "###"
     },
     {
@@ -41,7 +40,6 @@
       "brand": "Chevrolet",
       "model": "Equinox",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -49,7 +47,6 @@
       "brand": "Chevrolet",
       "model": "Malibu",
       "year": "2007",
-      "features": [],
       "description": "###"
     },
     {
@@ -57,7 +54,6 @@
       "brand": "Chevrolet",
       "model": "Malibu",
       "year": "2013",
-      "features": [],
       "description": "###"
     },
     {
@@ -65,7 +61,6 @@
       "brand": "Chevrolet",
       "model": "S10",
       "year": "1998",
-      "features": [],
       "description": "###"
     },
     {
@@ -73,7 +68,6 @@
       "brand": "Chevrolet",
       "model": "Silverado",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -81,7 +75,6 @@
       "brand": "Chevrolet",
       "model": "Silverado",
       "year": "2020",
-      "features": [],
       "description": "###"
     },
     {
@@ -89,7 +82,6 @@
       "brand": "Chevrolet",
       "model": "Trail Blazer",
       "year": "2004",
-      "features": [],
       "description": "###"
     },
     {
@@ -97,7 +89,6 @@
       "brand": "Chevrolet",
       "model": "Equinox",
       "year": "2005",
-      "features": [],
       "description": "###"
     },
     {
@@ -105,7 +96,6 @@
       "brand": "Chrysler",
       "model": "200",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -113,7 +103,6 @@
       "brand": "Chrysler",
       "model": "200",
       "year": "2015",
-      "features": [],
       "description": "###"
     },
     {
@@ -121,7 +110,6 @@
       "brand": "Chrysler",
       "model": "Avenger",
       "year": "2008",
-      "features": [],
       "description": "###"
     },
     {
@@ -129,7 +117,6 @@
       "brand": "Chrysler",
       "model": "Avenger",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -137,7 +124,6 @@
       "brand": "Chrysler",
       "model": "Grand Caravan",
       "year": "2011",
-      "features": [],
       "description": "###"
     },
     {
@@ -145,7 +131,6 @@
       "brand": "Chrysler",
       "model": "Journey",
       "year": "2013",
-      "features": [],
       "description": "###"
     },
     {
@@ -153,7 +138,6 @@
       "brand": "Unknown",
       "model": "Special Vehicle",
       "year": "Unknown",
-      "features": [],
       "description": "###"
     },
     {
@@ -161,7 +145,6 @@
       "brand": "Dodge",
       "model": "Ram 1500",
       "year": "2003",
-      "features": [],
       "description": "###"
     },
     {
@@ -169,7 +152,6 @@
       "brand": "Fiat",
       "model": "500",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -177,7 +159,6 @@
       "brand": "Ford",
       "model": "Edge",
       "year": "2007",
-      "features": [],
       "description": "###"
     },
     {
@@ -185,7 +166,6 @@
       "brand": "Ford",
       "model": "Escape",
       "year": "2009",
-      "features": [],
       "description": "###"
     },
     {
@@ -193,7 +173,6 @@
       "brand": "Ford",
       "model": "Escape",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -201,7 +180,6 @@
       "brand": "Ford",
       "model": "F-150",
       "year": "2013",
-      "features": [],
       "description": "###"
     },
     {
@@ -209,7 +187,6 @@
       "brand": "Ford",
       "model": "F-150",
       "year": "2016",
-      "features": [],
       "description": "###"
     },
     {
@@ -217,7 +194,6 @@
       "brand": "Ford",
       "model": "Fiesta",
       "year": "2017",
-      "features": [],
       "description": "###"
     },
     {
@@ -225,7 +201,6 @@
       "brand": "Ford",
       "model": "Fiesta",
       "year": "2019",
-      "features": [],
       "description": "###"
     },
     {
@@ -233,7 +208,6 @@
       "brand": "Ford",
       "model": "Windstar",
       "year": "2001",
-      "features": [],
       "description": "###"
     },
     {
@@ -241,7 +215,6 @@
       "brand": "GMC",
       "model": "Buick Enclave",
       "year": "2008",
-      "features": [],
       "description": "###"
     },
     {
@@ -249,7 +222,6 @@
       "brand": "Honda",
       "model": "Accord",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -257,7 +229,6 @@
       "brand": "Honda",
       "model": "Accord",
       "year": "2017",
-      "features": [],
       "description": "###"
     },
     {
@@ -265,7 +236,6 @@
       "brand": "Hummer",
       "model": "H3",
       "year": "2007",
-      "features": [],
       "description": "###"
     },
     {
@@ -273,7 +243,6 @@
       "brand": "Jeep",
       "model": "Cherokee",
       "year": "2021",
-      "features": [],
       "description": "###"
     },
     {
@@ -281,7 +250,6 @@
       "brand": "Kia",
       "model": "Soul",
       "year": "2013",
-      "features": [],
       "description": "###"
     },
     {
@@ -289,7 +257,6 @@
       "brand": "Mazda",
       "model": "CX-7",
       "year": "2007",
-      "features": [],
       "description": "###"
     },
     {
@@ -297,7 +264,6 @@
       "brand": "Mercedes-Benz",
       "model": "Clase C",
       "year": "2013",
-      "features": [],
       "description": "###"
     },
     {
@@ -305,7 +271,6 @@
       "brand": "Nissan",
       "model": "Altima",
       "year": "2013",
-      "features": [],
       "description": "###"
     },
     {
@@ -313,7 +278,6 @@
       "brand": "Nissan",
       "model": "March",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -321,7 +285,6 @@
       "brand": "Nissan",
       "model": "Murano",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -329,7 +292,6 @@
       "brand": "Nissan",
       "model": "Pathfinder",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -337,7 +299,6 @@
       "brand": "Toyota",
       "model": "Camry",
       "year": "2011",
-      "features": [],
       "description": "###"
     },
     {
@@ -345,7 +306,6 @@
       "brand": "Toyota",
       "model": "Tacoma",
       "year": "2017",
-      "features": [],
       "description": "###"
     },
     {
@@ -353,7 +313,6 @@
       "brand": "Volkswagen",
       "model": "Beetle",
       "year": "2015",
-      "features": [],
       "description": "###"
     },
     {
@@ -361,7 +320,6 @@
       "brand": "Volkswagen",
       "model": "Beetle",
       "year": "2012",
-      "features": [],
       "description": "###"
     },
     {
@@ -369,7 +327,6 @@
       "brand": "Volkswagen",
       "model": "Golf",
       "year": "2010",
-      "features": [],
       "description": "###"
     },
     {
@@ -377,7 +334,6 @@
       "brand": "Volkswagen",
       "model": "Golf",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -385,7 +341,6 @@
       "brand": "Volkswagen",
       "model": "Golf MK7",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -393,7 +348,6 @@
       "brand": "Volkswagen",
       "model": "GTI MK6",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -401,7 +355,6 @@
       "brand": "Volkswagen",
       "model": "GTI MK7",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -409,7 +362,6 @@
       "brand": "Volkswagen",
       "model": "Jetta MK6 1.4",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -417,7 +369,6 @@
       "brand": "Volkswagen",
       "model": "Jetta",
       "year": "2018",
-      "features": [],
       "description": "###"
     },
     {
@@ -425,7 +376,6 @@
       "brand": "Volkswagen",
       "model": "Jetta",
       "year": "2011",
-      "features": [],
       "description": "###"
     },
     {
@@ -433,7 +383,6 @@
       "brand": "Volkswagen",
       "model": "Jetta 1.8",
       "year": "2014",
-      "features": [],
       "description": "###"
     },
     {
@@ -441,7 +390,6 @@
       "brand": "Volkswagen",
       "model": "Jetta",
       "year": "2019",
-      "features": [],
       "description": "###"
     },
     {
@@ -449,7 +397,6 @@
       "brand": "Volkswagen",
       "model": "Passat",
       "year": "2012",
-      "features": [],
       "description": "###"
     },
     {
@@ -457,7 +404,6 @@
       "brand": "Volkswagen",
       "model": "Passat",
       "year": "2017",
-      "features": [],
       "description": "###"
     }
   ]

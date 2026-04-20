@@ -45,7 +45,7 @@ function getModelsByBrand(brand) {
     return [...new Set(vehicles.filter(v => v.brand === brand).map(v => v.model))].sort();
 }
 
-// Renderizar el catálogo
+// Renderizar el catálogo (VERSIÓN SIMPLIFICADA SIN REDUNDANCIAS)
 function renderCatalog(brandFilter, modelFilter) {
     const grid = document.getElementById('catalog-grid');
     
@@ -67,24 +67,18 @@ function renderCatalog(brandFilter, modelFilter) {
     }
     
     grid.innerHTML = filteredVehicles.map(vehicle => {
-        // Generar lista de características si hay, si no mostrar placeholder
+        // Generar título completo: MARCA MODELO AÑO
+        const fullTitle = `${vehicle.brand} ${vehicle.model} ${vehicle.year}`.trim();
+        
+        // Generar características si existen
         let featuresHtml = '';
         if (vehicle.features && vehicle.features.length > 0) {
             const featuresList = vehicle.features.map(feature => `<li>${feature}</li>`).join('');
             featuresHtml = `
                 <div class="vehicle-features">
-                    <strong>Key Features:</strong>
+                    <strong>Características:</strong>
                     <ul>
                         ${featuresList}
-                    </ul>
-                </div>
-            `;
-        } else {
-            featuresHtml = `
-                <div class="vehicle-features">
-                    <strong>Key Features:</strong>
-                    <ul>
-                        <li>###</li>
                     </ul>
                 </div>
             `;
@@ -93,18 +87,13 @@ function renderCatalog(brandFilter, modelFilter) {
         return `
             <div class="catalog-item">
                 <div class="catalog-image-container">
-                    <img src="images/catalog/${vehicle.image}" alt="${vehicle.brand} ${vehicle.model} ${vehicle.year}" 
+                    <img src="images/catalog/${vehicle.image}" alt="${fullTitle}" 
                          class="catalog-image" onerror="this.src='images/catalog/placeholder.png'">
                 </div>
                 <div class="catalog-info">
-                    <h3 class="vehicle-title">${vehicle.brand} ${vehicle.model} ${vehicle.year}</h3>
-                    <div class="vehicle-details">
-                        <p><strong>Brand:</strong> ${vehicle.brand}</p>
-                        <p><strong>Model:</strong> ${vehicle.model}</p>
-                        <p><strong>Year:</strong> ${vehicle.year}</p>
-                    </div>
+                    <h3 class="vehicle-title">${fullTitle}</h3>
                     <div class="vehicle-description">
-                        <p><strong>Description:</strong> ${vehicle.description}</p>
+                        <p>${vehicle.description}</p>
                         ${featuresHtml}
                     </div>
                 </div>
