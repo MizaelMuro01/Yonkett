@@ -2,10 +2,6 @@
   "vehicles": [
     {
       "image": "CHEVROLET_CAPTIVA_2014.png",
-      "brand": "Chevrolet",
-      "model": "Captiva",
-      "year": "2014",
-      "features": [],
       "description": "Motor 2.4"
     },
     {
