@@ -1,150 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yonkett App</title>
+    <title>Yonkett — Connect with Car Owners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/project.css">
 </head>
-
 <body>
-    <!-- Header con hamburger menu -->
-    <header class="header">
-        <!-- Hamburger button for mobile -->
-        <button class="hamburger" aria-label="Toggle navigation menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        
-        <!-- Navigation menu -->
-        <nav class="nav">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="catalog.html" class="nav-link">Catalog</a>
-            <a href="privacy.html" class="nav-link">Privacy Policy</a>
-            <a href="terms.html" class="nav-link">Terms & Conditions</a>
-            <a href="delete-account.html" class="nav-link">Delete Account</a>
-        </nav>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <img src="images/home/logo-yonkett.png" alt="Yonkett" class="header-logo">
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="catalog.html" class="nav-link">Catalog</a>
+                <a href="privacy.html" class="nav-link">Privacy</a>
+                <a href="terms.html" class="nav-link">Terms</a>
+                <a href="delete-account.html" class="nav-link">Delete Account</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- OVERLAY for mobile nav -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- HERO -->
     <section class="hero">
-        <img src="images/home/header-yonkett.png" alt="Yonkett App - Connect with Car Owners" class="hero-image">
+        <img src="images/home/header-yonkett.png" alt="Yonkett App" class="hero-image">
+        <div class="hero-badge">NOW ON iOS & ANDROID</div>
     </section>
 
-    <!-- Info Section -->
-    <section class="info-section">
-        <div class="info-grid">
-            <div class="info-card">
-                <img src="images/home/info-yonkett.png" alt="How Yonkett Works" class="info-image">
-                <div class="info-text">
-                    <h3>How It Works</h3>
-                    <p>Create your car profile and connect with same model owners</p>
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="features-header">
+            <span class="section-label">WHAT WE OFFER</span>
+            <h2>Built for Car Owners</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon-wrap">
+                    <img src="images/home/info-yonkett.png" alt="How It Works" class="feature-icon">
                 </div>
+                <h3>How It Works</h3>
+                <p>Create your car profile and connect with owners of the same model</p>
             </div>
-            <div class="info-card">
-                <img src="images/home/fuel-yonkett.png" alt="Fuel Tracking" class="info-image">
-                <div class="info-text">
-                    <h3>Fuel Tracking</h3>
-                    <p>Monitor your fuel expenses and maintenance costs</p>
+            <div class="feature-card">
+                <div class="feature-icon-wrap">
+                    <img src="images/home/fuel-yonkett.png" alt="Fuel Tracking" class="feature-icon">
                 </div>
+                <h3>Fuel Tracking</h3>
+                <p>Monitor fuel expenses and maintenance costs over time</p>
             </div>
-            <div class="info-card">
-                <img src="images/home/community-yonkett.png" alt="Community" class="info-image">
-                <div class="info-text">
-                    <h3>Community</h3>
-                    <p>Join model-specific groups and share experiences</p>
+            <div class="feature-card">
+                <div class="feature-icon-wrap">
+                    <img src="images/home/community-yonkett.png" alt="Community" class="feature-icon">
                 </div>
+                <h3>Community</h3>
+                <p>Join model-specific groups and share real-world experiences</p>
             </div>
-            <div class="info-card">
-                <img src="images/home/marketplace-yonkett.png" alt="Marketplace" class="info-image">
-                <div class="info-text">
-                    <h3>Marketplace</h3>
-                    <p>Buy and sell parts for your specific car model</p>
+            <div class="feature-card">
+                <div class="feature-icon-wrap">
+                    <img src="images/home/marketplace-yonkett.png" alt="Marketplace" class="feature-icon">
                 </div>
+                <h3>Marketplace</h3>
+                <p>Buy and sell parts made for your exact car model</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <h2 class="faq-title">Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <!-- FAQ items will be added by JavaScript -->
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-inner">
+            <span class="section-label">GOT QUESTIONS?</span>
+            <h2>Frequently Asked</h2>
+            <div class="faq-list" id="faq-container">
+                <!-- FAQ items injected by JS -->
+            </div>
         </div>
     </section>
 
-    <!-- App Stores Section -->
-    <section class="stores-section">
-        <h2 class="stores-title">Download Our App</h2>
-        <div class="stores-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.yonkett.yonkett" class="store-link" target="_blank">
-                <img src="images/home/google-yonkett.png" alt="Download on Google Play Store" class="store-image">
-            </a>
-            <a href="https://apps.apple.com/mx/app/yonkett/id6752039154" class="store-link" target="_blank">
-                <img src="images/home/appstore-yonkett.png" alt="Download on Apple App Store" class="store-image">
-            </a>
+    <!-- DOWNLOAD -->
+    <section class="download">
+        <div class="download-inner">
+            <span class="section-label">GET THE APP</span>
+            <h2>Download Yonkett</h2>
+            <p class="download-sub">Available on all major platforms, for free.</p>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.yonkett.yonkett" class="store-btn" target="_blank" rel="noopener noreferrer">
+                    <img src="images/home/google-yonkett.png" alt="Google Play">
+                </a>
+                <a href="https://apps.apple.com/mx/app/yonkett/id6752039154" class="store-btn" target="_blank" rel="noopener noreferrer">
+                    <img src="images/home/appstore-yonkett.png" alt="App Store">
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- User Preferences Modal (NEW) -->
-    <dialog class="preferences-modal" id="preferences-modal">
-        <div class="modal-content">
-            <h3>User Preferences</h3>
-            <form id="preferences-form">
-                <div class="form-group">
-                    <label for="theme-select">Theme:</label>
-                    <select id="theme-select" name="theme">
-                        <option value="dark">Dark Mode</option>
-                        <option value="light">Light Mode</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="language-select">Language:</label>
-                    <select id="language-select" name="language">
-                        <option value="en">English</option>
-                        <option value="es">Spanish</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="notifications" name="notifications">
-                        Enable notifications
-                    </label>
-                </div>
-                <div class="modal-buttons">
-                    <button type="button" class="modal-btn cancel-btn" onclick="closePreferencesModal()">Cancel</button>
-                    <button type="submit" class="modal-btn save-btn">Save Preferences</button>
-                </div>
-            </form>
-        </div>
-    </dialog>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <img src="images/home/logo-yonkett.png" alt="Yonkett Logo" class="footer-logo">
-                <!-- Botón de preferencias eliminado -->
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="images/home/logo-yonkett.png" alt="Yonkett" class="footer-logo">
+                <p>The car community app for real enthusiasts.</p>
             </div>
-            <div class="footer-center">
-                <a href="index.html" class="footer-link">Home</a>
-                <a href="catalog.html" class="footer-link">Catalog</a>
-                <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                <a href="terms.html" class="footer-link">Terms & Conditions</a>
-                <a href="delete-account.html" class="footer-link">Delete Account</a>
-            </div>
-            <div class="footer-right">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/yonkettapp/" class="social-link" aria-label="Instagram">
-                        <img src="images/home/insta-yonkett.png" alt="Instagram" class="social-icon">
-                    </a>
-                    <a href="https://www.tiktok.com/@yonkettapp" class="social-link" aria-label="Tiktok">
-                        <img src="images/home/tiktok-yonkett.png" alt="Tiktok" class="social-icon">
-                    </a>
-                </div>
-                <!-- Texto de localStorage eliminado -->
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="catalog.html">Catalog</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="delete-account.html">Delete Account</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/yonkettapp/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <img src="images/home/insta-yonkett.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@yonkettapp" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                    <img src="images/home/tiktok-yonkett.png" alt="TikTok">
+                </a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -152,9 +132,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript files -->
     <script src="scripts/project.js" type="module"></script>
-    <!-- type="module" for ES Modules requirement -->
 </body>
-
 </html>
