@@ -59,6 +59,7 @@ body {
 .hero {
     width: 100%;
     padding: 0;
+    position: relative;
 }
 
 .hero-image {
@@ -67,35 +68,37 @@ body {
     display: block;
 }
 
-/* Dynamic Catalog Button */
+/* Dynamic Catalog Button - Positioned above "ENVÍOS A TODO MÉXICO" and to the right of white arrow */
 .catalog-dynamic-btn {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    /* Posicionado justo arriba del texto "ENVÍOS A TODO MÉXICO" y a la derecha de la flecha blanca */
+    bottom: 18%;
+    right: 12%;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     background: linear-gradient(135deg, #FA0001 0%, #cc0000 100%);
     color: white;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
     font-family: inherit;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(0px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     z-index: 20;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .catalog-dynamic-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(250, 0, 1, 0.4);
+    box-shadow: 0 8px 25px rgba(250, 0, 1, 0.5);
     background: linear-gradient(135deg, #ff1a1a 0%, #FA0001 100%);
     gap: 15px;
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .catalog-dynamic-btn:active {
@@ -113,6 +116,7 @@ body {
 
 .btn-text {
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .btn-arrow {
@@ -502,6 +506,14 @@ body {
     .info-card:hover {
         transform: scale(1.08);
     }
+
+    /* Ajustar botón para tablet */
+    .catalog-dynamic-btn {
+        bottom: 15%;
+        right: 10%;
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -593,12 +605,12 @@ body {
         color: #ffffff;
     }
 
-    /* Dynamic Catalog Button Responsive */
+    /* Ajustar botón para móvil */
     .catalog-dynamic-btn {
-        top: 15px;
-        right: 15px;
+        bottom: 12%;
+        right: 8%;
         padding: 8px 16px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         gap: 6px;
     }
     
@@ -607,7 +619,11 @@ body {
     }
     
     .btn-arrow {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-text {
+        letter-spacing: 0.5px;
     }
 }
 
@@ -678,17 +694,21 @@ body {
         color: #ffffff;
     }
 
-    /* Dynamic Catalog Button for very small screens */
+    /* Ajustar botón para móvil pequeño */
     .catalog-dynamic-btn {
-        top: 10px;
-        right: 10px;
+        bottom: 10%;
+        right: 5%;
         padding: 6px 12px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         gap: 4px;
     }
     
-    .btn-text {
-        letter-spacing: 0.5px;
+    .btn-icon {
+        font-size: 0.8rem;
+    }
+    
+    .btn-arrow {
+        font-size: 0.8rem;
     }
 }
 
