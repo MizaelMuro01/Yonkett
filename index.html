@@ -28,12 +28,14 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Catalog Button Overlay -->
+    <!-- Hero Section with Dynamic Catalog Button -->
     <section class="hero" style="position: relative;">
         <img src="images/home/header-yonkett.png" alt="Yonkett App - Connect with Car Owners" class="hero-image">
-        <!-- Catalog Button floating on top right -->
-        <a href="catalog.html" class="catalog-overlay-btn" style="position: absolute; top: 20px; right: 20px; z-index: 10;">
-            <img src="images/home/boton-catalogo.png" alt="Go to Catalog" style="width: auto; height: 50px; transition: transform 0.3s ease;">
+        <!-- Dynamic Catalog Button -->
+        <a href="catalog.html" class="catalog-dynamic-btn">
+            <span class="btn-icon">🚗</span>
+            <span class="btn-text">VER CATÁLOGO</span>
+            <span class="btn-arrow">→</span>
         </a>
     </section>
 
@@ -42,7 +44,7 @@
         <img src="images/home/below-header-yonkett.png" alt="Yonkett Features" style="width: 100%; height: auto; display: block;">
     </section>
 
-    <!-- App Stores Section (MOVED HERE) -->
+    <!-- App Stores Section -->
     <section class="stores-section">
         <div class="stores-buttons">
             <a href="https://play.google.com/store/apps/details?id=com.yonkett.yonkett" class="store-link" target="_blank">
@@ -96,7 +98,7 @@
         </div>
     </section>
 
-    <!-- User Preferences Modal (NEW) -->
+    <!-- User Preferences Modal -->
     <dialog class="preferences-modal" id="preferences-modal">
         <div class="modal-content">
             <h3>User Preferences</h3>
@@ -134,7 +136,6 @@
         <div class="footer-content">
             <div class="footer-left">
                 <img src="images/home/logo-yonkett.png" alt="Yonkett Logo" class="footer-logo">
-                <!-- Botón de preferencias eliminado -->
             </div>
             <div class="footer-center">
                 <a href="index.html" class="footer-link">Home</a>
@@ -152,7 +153,6 @@
                         <img src="images/home/tiktok-yonkett.png" alt="Tiktok" class="social-icon">
                     </a>
                 </div>
-                <!-- Texto de localStorage eliminado -->
             </div>
         </div>
         <div class="footer-bottom">
@@ -162,7 +162,6 @@
 
     <!-- JavaScript files -->
     <script src="scripts/project.js" type="module"></script>
-    <!-- type="module" for ES Modules requirement -->
 </body>
 
 </html>

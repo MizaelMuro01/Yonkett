@@ -67,6 +67,63 @@ body {
     display: block;
 }
 
+/* Dynamic Catalog Button */
+.catalog-dynamic-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #FA0001 0%, #cc0000 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0px);
+    z-index: 20;
+    cursor: pointer;
+}
+
+.catalog-dynamic-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(250, 0, 1, 0.4);
+    background: linear-gradient(135deg, #ff1a1a 0%, #FA0001 100%);
+    gap: 15px;
+}
+
+.catalog-dynamic-btn:active {
+    transform: translateY(1px);
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.catalog-dynamic-btn:hover .btn-icon {
+    transform: scale(1.1);
+}
+
+.btn-text {
+    letter-spacing: 1px;
+}
+
+.btn-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.catalog-dynamic-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
 /* Info Section */
 .info-section {
     padding: 3rem 1rem;
@@ -535,6 +592,23 @@ body {
         width: 250px;
         color: #ffffff;
     }
+
+    /* Dynamic Catalog Button Responsive */
+    .catalog-dynamic-btn {
+        top: 15px;
+        right: 15px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+    
+    .btn-icon {
+        font-size: 1rem;
+    }
+    
+    .btn-arrow {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -602,6 +676,19 @@ body {
         min-width: 200px;
         background-color: #FA0001;
         color: #ffffff;
+    }
+
+    /* Dynamic Catalog Button for very small screens */
+    .catalog-dynamic-btn {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        gap: 4px;
+    }
+    
+    .btn-text {
+        letter-spacing: 0.5px;
     }
 }
 
