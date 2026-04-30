@@ -28,9 +28,30 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section with Catalog Button Overlay -->
+    <section class="hero" style="position: relative;">
         <img src="images/home/header-yonkett.png" alt="Yonkett App - Connect with Car Owners" class="hero-image">
+        <!-- Catalog Button floating on top right -->
+        <a href="catalog.html" class="catalog-overlay-btn" style="position: absolute; top: 20px; right: 20px; z-index: 10;">
+            <img src="images/home/boton-catalogo.png" alt="Go to Catalog" style="width: auto; height: 50px; transition: transform 0.3s ease;">
+        </a>
+    </section>
+
+    <!-- Below Header Image Section -->
+    <section class="below-header">
+        <img src="images/home/below-header-yonkett.png" alt="Yonkett Features" style="width: 100%; height: auto; display: block;">
+    </section>
+
+    <!-- App Stores Section (MOVED HERE) -->
+    <section class="stores-section">
+        <div class="stores-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.yonkett.yonkett" class="store-link" target="_blank">
+                <img src="images/home/google-yonkett.png" alt="Download on Google Play Store" class="store-image">
+            </a>
+            <a href="https://apps.apple.com/mx/app/yonkett/id6752039154" class="store-link" target="_blank">
+                <img src="images/home/appstore-yonkett.png" alt="Download on Apple App Store" class="store-image">
+            </a>
+        </div>
     </section>
 
     <!-- Info Section -->
@@ -72,19 +93,6 @@
         <h2 class="faq-title">Frequently Asked Questions</h2>
         <div class="faq-container">
             <!-- FAQ items will be added by JavaScript -->
-        </div>
-    </section>
-
-    <!-- App Stores Section -->
-    <section class="stores-section">
-        <h2 class="stores-title">Download Our App</h2>
-        <div class="stores-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.yonkett.yonkett" class="store-link" target="_blank">
-                <img src="images/home/google-yonkett.png" alt="Download on Google Play Store" class="store-image">
-            </a>
-            <a href="https://apps.apple.com/mx/app/yonkett/id6752039154" class="store-link" target="_blank">
-                <img src="images/home/appstore-yonkett.png" alt="Download on Apple App Store" class="store-image">
-            </a>
         </div>
     </section>
 
